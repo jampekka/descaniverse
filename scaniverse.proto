@@ -12,13 +12,17 @@ message Scan {
 	double modifiedAt = 3;
 	string name = 4;
 	int64 numFrames = 6;
+	int64 totalSizeBytes = 7;
 	int64 numAnchors = 12;
 	string captureDevice = 16;
-	ScanConfiguration configuration = 17;
-
-	repeated float captureOrigin = 23;
 	
+	ScanConfiguration configuration = 17;
+	Location location = 18;
 	Place place = 19; 
+	
+	repeated float captureOrigin = 23;
+	int64 rawDataSizeBytes = 26;
+	
 }
 
 message Place {
@@ -40,8 +44,7 @@ message ScanConfiguration {
 	float unknown5 = 5;
 	int64 unknown7 = 7;
 	float unknown8 = 8;
-	int64 unknown11 = 11;
-
+	int64 unknown11 = 11;	
 }
 
 message RasterSize {
