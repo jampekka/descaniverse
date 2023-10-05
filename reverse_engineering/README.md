@@ -5,9 +5,9 @@ The reverse engineered Scaniverse version was 2.1.4 but the data for (most) test
 Scaniverse stores each scanning session as a directory in `/Library/Application Support/scans/`.
 The directory entries of interest for the raw data are:
 
-* `scan.pb`: Protocol buffer file containing metadata if the scanning session. Partially reverse engineered.
+* `scan.pb`: Protocol buffer file containing metadata if the scanning session. Mostly reverse engineered.
   * Contributions appreciated for further reverse engineering.
-* `frames.pb`: Protocol buffer file containing metadata on each recorded frame. Mostly reverse engineered.
+* `frames.pb`: Protocol buffer file containing metadata on each recorded frame. Totally reverse engineered.
   * Contributions appreciated for further reverse engineering.
 * `imgl/`: Directory of high resolution JPEG images.
 * `img/`: Directory of low resolution JPEG images. Presumably simply rescaled from the high resolution images.
