@@ -10,7 +10,7 @@ Scaniverse doesn't support exporting raw data and it can't be read from the devi
 tools (e.g. [ifuse](https://github.com/libimobiledevice/ifuse)) to read files from iPhone/iPad.
 
 
-<--
+<!--
  ## Rant 🖕
 
 I wasted quite a bit of time on this. Closed software and platforms are a major hinderance
