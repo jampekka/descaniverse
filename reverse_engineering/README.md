@@ -15,7 +15,15 @@ The directory entries of interest for the raw data are:
 
 ## Protocol buffer formats
 
-The protocol buffer formats were reverse engineered with the help of [blackboxprotobuf](https://github.com/nccgroup/blackboxprotobuf) and [resymbol](https://github.com/paradiseduo/resymbol). Resymbol extracts Swift class structure (see the [Scaniverse.headers](Scaniverse.headers) file) from the ([Apple Fairplay DRM decrypted](https://decrypt.day/app/id1541433223)) `Scaniverse` binary of the iOS app.
+The protocol buffer formats were reverse engineered with the help of:
+
+| | | |
+| --- | --- | --- |
+| 🫡 | [blackboxprotobuf](https://github.com/nccgroup/blackboxprotobuf) | to figure out the rough format structure |
+🫡 | [resymbol](https://github.com/paradiseduo/resymbol) | to extract Swift class structure (see the [Scaniverse.headers](Scaniverse.headers) file) from the `Scaniverse` executable. NOTE: resymbol needs Xcode 14.2 or later, which again requires MacOS 12 or later.
+ 🫡 | [decrypt.day](https://decrypt.day/app/id1541433223) | to get an Apple Fairplay DRM 🤮 decrypted .ipa of Scaniverse |
+| 🫡 | [quickemu](https://github.com/quickemu-project/quickemu) | so I didn't have to find one of them overpriced locked down barely usable hipster things |
+| | | |
 
 The `scan.pb` message class is `ScanProto` but its structure is defined in the (larger) `_StorageClass` class. The structure doesn't seem to match exactly the protocol buffer structure but most fields of it can be figured out from this.
 
