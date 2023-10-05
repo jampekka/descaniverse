@@ -1,5 +1,67 @@
 syntax = "proto3";
 
+message Frames {
+	repeated Location locations = 2;
+	repeated Frame frames = 5;
+	repeated AffineTransform anchors = 13;
+}
+
+message Scan {
+	string id = 1;
+	double createdAt = 2;
+	double modifiedAt = 3;
+	string name = 4;
+	int64 numFrames = 6;
+	int64 numAnchors = 12;
+	string captureDevice = 16;
+	ScanConfiguration configuration = 17;
+
+	repeated float captureOrigin = 23;
+	
+	Place place = 19; 
+}
+
+message Place {
+	repeated string names = 1;
+	string street = 2;
+	string neighborhood = 3;
+	string city = 4;
+	string state = 5;
+	string postalCode = 6;
+	string country = 7;
+	string countryCode = 8;
+}
+
+message ScanConfiguration {
+	RasterSize smallImageSize = 1;
+	RasterSize largeImageSize = 2;
+	RasterSize depthSize = 3;
+	float unknown4 = 4;
+	float unknown5 = 5;
+	int64 unknown7 = 7;
+	float unknown8 = 8;
+	int64 unknown11 = 11;
+
+}
+
+message RasterSize {
+	int64 width = 1;
+	int64 height = 2;
+}
+
+
+message Frame {
+	optional int64 id = 1;
+	optional int64 anchor = 2;
+	double timestamp = 3;
+	CameraParams camera = 4;
+	AffineTransform transform = 5;
+	ExposureInfo exposure = 6;
+	DepthRange depth_range = 7;
+	float quality = 8;
+	bool isLargeImage = 9;
+}
+
 message AffineTransform {
 	repeated float rotation = 1;
 	repeated float translation = 2;
@@ -14,20 +76,6 @@ message Location {
 	float elevationAccuracy = 6;
 	float headingDegrees = 7;
 	float headingAccuracy = 8;
-}
-
-
-
-message Frame {
-	optional int64 id = 1;
-	optional int64 anchor = 2;
-	double timestamp = 3;
-	CameraParams camera = 4;
-	AffineTransform transform = 5;
-	ExposureInfo exposure = 6;
-	DepthRange depth_range = 7;
-	float quality = 8;
-	bool isLargeImage = 9;
 }
 
 message CameraParams {
@@ -48,10 +96,4 @@ message DepthRange {
 	float far = 2;
 }
 
-//message DepthRan
 
-message Frames {
-	repeated Location locations = 2;
-	repeated Frame frames = 5;
-	repeated AffineTransform anchors = 13;
-}
