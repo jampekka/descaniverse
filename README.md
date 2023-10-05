@@ -35,18 +35,12 @@ TODO
 
 Aren't walled gardens, closed source, DRM, war on general purpose computing etc. great?
 
-I wasted quite a bit of time on this. Closed software and platforms are a major hinderance
-for technological and societal progress. Apple is of course especially shitty in this (and many other aspects)
-and I encourage everybody to boycott them when feasible. In general avoid closed source
-software and closed down devices.
-
-I regret getting an iPhone for the project I needed this hackery for and I regret using Scaniverse.
 If you think you need the LiDAR data (you probably don't if you do something like NeRF or photogrammetry),
-iPhone/iPad seems to be unfortunately the only option, but
-even then you're better off with open source like [ScanKit](https://github.com/Kenneth-Schroeder/ScanKit)
+iPhone/iPad seems to be unfortunately the only (integrated) option at the moment. Open Source alternatives
+to Scaniverse are [ScanKit](https://github.com/Kenneth-Schroeder/ScanKit)
 or [RTAB-Map](http://introlab.github.io/rtabmap/). [Polycam](https://poly.cam/) is closed source (and nagware),
 but at least it lets you access your data.
 
-You are probably better off using Android and some ARCore/Tango recorder like [RTAB-Map](https://github.com/introlab/rtabmap/).
+A good alternative is to use Android and some ARCore/Tango recorder like [RTAB-Map](https://github.com/introlab/rtabmap/).
 The LiDAR is mostly a gimmic anyway, with quite poor resolution, accuracy and range.
 </details>
