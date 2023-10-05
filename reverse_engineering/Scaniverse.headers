@@ -1,0 +1,6877 @@
+protocol ShareVideoViewControllerDelegate {
+}
+
+protocol EditorFilterViewDelegate {
+}
+
+protocol SceneViewFrameCallback {
+}
+
+protocol VideoControlsViewDelegate {
+}
+
+protocol NianticUploaderDelegate {
+}
+
+protocol ProcessingStatusViewDelegate {
+}
+
+protocol SignInViewControllerDelegate {
+}
+
+protocol LabeledToggleDelegate {
+}
+
+protocol ReconTestRunnerDelegate {
+}
+
+protocol EditorViewControllerDelegate {
+}
+
+protocol UploadScanViewControllerDelegate {
+}
+
+protocol ScanSizeViewControllerDelegate {
+}
+
+protocol ScannerDebugViewDelegate {
+}
+
+protocol SetVisibilityViewControllerDelegate {
+}
+
+protocol ScanPosterDelegate {
+}
+
+protocol UsernameViewControllerDelegate {
+}
+
+protocol ScanListCellDelegate {
+}
+
+protocol PostToSketchfabViewControllerDelegate {
+}
+
+protocol ShutterControlDelegate {
+}
+
+protocol AnimationControllerDelegate {
+}
+
+protocol MeasurementInfoViewDelegate {
+}
+
+protocol MeasurementHeaderViewDelegate {
+}
+
+protocol ProgressSmootherDelegate {
+}
+
+protocol ScanLoaderDelegate {
+}
+
+protocol ViewTypeSelectorDelegate {
+}
+
+protocol ExportViewControllerDelegate {
+}
+
+protocol FloatVectorType {
+}
+
+protocol FooterCellDelegate {
+}
+
+protocol EditorMenuViewDelegate {
+}
+
+protocol ScaniverseTextFieldDelegate {
+}
+
+protocol CropControllerDelegate {
+}
+
+protocol SystemShareViewControllerDelegate {
+}
+
+protocol SetValueViewControllerDelegate {
+}
+
+protocol ModalTransitionViewController {
+}
+
+protocol PanelHeaderViewDelegate {
+}
+
+protocol Exporter {
+}
+
+protocol ScaniverseAnimation {
+}
+
+protocol PostToScaniverseViewControllerDelegate {
+}
+
+protocol Clipper {
+}
+
+protocol ConfirmScanViewDelegate {
+}
+
+protocol ScannerViewDelegate {
+}
+
+protocol ReconstructionModeViewDelegate {
+}
+
+protocol CameraController {
+}
+
+protocol TermsViewControllerDelegate {
+}
+
+protocol EditorAdjustmentViewDelegate {
+}
+
+protocol SharedScanCellDelegate {
+}
+
+protocol InfoViewControllerDelegate {
+}
+
+protocol VideoSpeedPanelDelegate {
+}
+
+protocol VisibilityToggleDelegate {
+}
+
+protocol ReparentingViewController {
+}
+
+protocol LocationRecorderDelegate {
+}
+
+protocol ReleaseNotesBoxDelegate {
+}
+
+protocol ScanOptionsViewDelegate {
+}
+
+protocol MeasurementControllerDelegate {
+}
+
+protocol CropOverlayViewDelegate {
+}
+
+protocol EditorCropViewDelegate {
+}
+
+protocol FeedManagerListener {
+}
+
+protocol VideoOptionPanelDelegate {
+}
+
+protocol VideoOptionItem {
+}
+
+protocol RangeSelectorDelegate {
+}
+
+protocol RenameScanViewControllerDelegate {
+}
+
+protocol UserInfoCellDelegate {
+}
+
+class ShareVideoViewController: So16UIViewControllerC {
+    var delegate: So32ShareVideoViewControllerDelegateC?
+    let scene: ScaniverseScene
+    let animationController: AnimationController
+    let motionTypes: Swift.Array<VideoMotionType>
+    var aspectRatio: AspectRatio
+    var background: BackgroundType
+    var motionType: VideoMotionType
+    var isAnimationAdjusted: Bool
+    let outURL: 0x028d1e05
+    var creator: VideoCreator
+    var state: UIState
+    var savedMotionType: VideoMotionType
+    var savedAspectRatio: AspectRatio
+    var savedSpeed: Float
+    var savedIsReversed: Bool
+    var savedBackground: BackgroundType
+    let closeButton: UIButton
+    let contentContainer: UIView
+    let sceneViewContainer: UIView
+    let sceneView: ScaniverseSceneView
+    let snapshotView: UIImageView
+    let actionButton: MainButton
+    let recordButton: RecordButton
+    let videoControls: VideoControlsView
+    let busyOverlay: UIView
+    let progressView: RangeReplaceableCollection
+    let speedPanel: VideoSpeedPanel
+    let motionPanel: VideoOptionPanel
+    let aspectPanel: VideoOptionPanel
+    let backgroundPanel: VideoOptionPanel
+    var adjustmentButtons: Swift.Array<UIButton>
+    var adjustmentButtonContainer: UIStackView
+    let tipManager: VideoTipManager
+
+    func 00005074(){}
+    func 00005438(){}
+    func 000057f0(){}
+    func 000058d8(){}
+    func 00005ce0(){}
+    func 00005f3c(){}
+    func 000063ac(){}
+    func 000066e4(){}
+    func 000068a4(){}
+    func 00006b5c(){}
+    func 00006e18(){}
+    func 00007088(){}
+    func 000071f0(){}
+    func 00007334(){}
+    func 00007578(){}
+    func 00007994(){}
+    func 00007d80(){}
+    func 000085ac(){}
+    func 000088b0(){}
+    func 0000af0c(){}
+}
+
+class CGImage {
+}
+
+class CGColor {
+}
+
+class CFString {
+}
+
+class LoadScanViewController: LoadingViewController {
+    let service: ScaniverseService
+    let scanID: String
+
+}
+
+class EditorFilterView: So6UIViewC {
+    var delegate: So24EditorFilterViewDelegateC?
+    var selectedFilterType: FilterType
+    var savedFilterIntensity: Float
+    let itemSize: CGSize
+    let headerView: PanelHeaderView
+    var collectionView: UICollectionView?
+    let intensityContainer: UIView
+    let intensityHeaderView: PanelHeaderView
+    let intensitySlider: TickSlider
+    let previewRenderer: FilterPreviewRenderer
+
+    func 00012540(){}
+    func 000127b4(){}
+    func 000128e8(){}
+    func 00012e2c(){}
+    func 00012fbc(){}
+}
+
+class AuthState {
+    var user: User
+
+    func 00013e7c(){}
+    func 00014814(){}
+    func 00015ad0(){}
+}
+
+class OverlayTipView: So6UIViewC {
+    var isActive: Bool
+    let label: UILabel
+    var generation: Int
+
+    func 000167b4(){}
+    func 00016a28(){}
+    func 00016d08(){}
+}
+
+class StandardCameraController {
+    var enableResetGesture: Bool
+    var enableRotation: Bool
+    var enablePan: Bool
+    var enableZoom: Bool
+    var enableHitTest: Bool
+    var enableZoomOnDoubleTap: Bool
+    var minDistance: Float
+    var maxDistance: Float
+    var initialCameraPosition: CameraState
+    var zoomStartDistance: Float
+    var rotationStartEulerAngles: 0x02a33405
+    var rotationFrameCount: Int
+
+    func 000172b4(){}
+    func 00017470(){}
+    func 00017640(){}
+    func 00017bcc(){}
+    func 00017e20(){}
+}
+
+class ProTag: So11UIImageViewC {
+}
+
+class ScaniverseSceneView: So7SCNViewC {
+    var cameraController: CameraController
+    let gestureManager: GestureManager
+    var frameCallbacks: Swift.Array<WeakFrameCallback>
+
+    func 00018b24(){}
+    func 00018e04(){}
+}
+
+class WeakFrameCallback {
+    var target: So22SceneViewFrameCallbackC?
+
+}
+
+class DownloadScanViewController: So16UIViewControllerC {
+    let codeField: ScaniverseTextField
+    let closeButton: UIButton
+    let localButton: MainButton
+    let remoteButton: MainButton
+    let importButton: UIButton
+    let statusLabel: UILabel
+    var downloader: ScanDownloader
+
+    func 0001ad94(){}
+    func 0001b188(){}
+    func 0001b8a8(){}
+}
+
+class VideoControlsView: So6UIViewC {
+    var delegate: So25VideoControlsViewDelegateC?
+    let pauseButton: VideoPauseButton
+    let slider: VideoProgressSlider
+
+    func 0001e2d0(){}
+}
+
+class VideoProgressSlider: So8UISliderC {
+    let Radius: 0x02fd2405
+}
+
+class VideoPauseButton: So8UIButtonC {
+    var isPlaying: Bool
+
+}
+
+class PipelineFactory {
+    let store: ScanStore
+
+    func 0001edc4(){}
+}
+
+class NianticUploader {
+    var delegate: So23NianticUploaderDelegateC?
+    let progress: NSProgress
+    var currentChunk: Int
+    let builder: NianticPayloadBuilder
+    var uuids: Array<String>
+    var requestUrlTask: NSURLSessionTask?
+    var uploadTask: NSURLSessionTask?
+    var state: State
+
+    func 00023b2c(){}
+    func 00023bc8(){}
+    func 00023d44(){}
+    func 000248ec(){}
+    func 00024d90(){}
+    func 00024fec(){}
+}
+
+class OrbitAnimation {
+    let duration: Double
+    let updatesTarget: Bool
+    var baseYaw: Float
+    var baseZoom: Float
+
+    func 00026578(){}
+    func 00026640(){}
+}
+
+class ProcessingStatusView: So6UIViewC {
+    var delegate: So28ProcessingStatusViewDelegateC?
+    var isCancelling: Bool
+    var stage: 0x028b2305
+    let containerView: UIView
+    let titleLabel: UILabel
+    let infoLabel: UILabel
+    let operationLabel: UILabel
+    let percentLabel: UILabel
+    let progressView: UIProgressView
+    let cancellingContainer: UIView
+    let cancellingIndicator: UIActivityIndicatorView
+    let cancellingLabel: UILabel
+    let cancelButton: MainButton
+    let smoother: ProgressSmoother
+
+    func 00028b3c(){}
+    func 00028c38(){}
+    func 00028d54(){}
+    func 00028ebc(){}
+    func 00028f98(){}
+}
+
+class PointCloudExporter {
+    let pointCloud: 0x028d2105
+    let adjustments: AdjustmentParamsProto
+    let createdAt: Double
+    let location: LocationProto
+    let queue: OS_dispatch_queue
+    let cancelQueue: OS_dispatch_queue
+    var _isCancelled: Bool
+
+    func 000299c0(){}
+    func 00029b94(){}
+    func 0002a05c(){}
+}
+
+class AdjustmentManager {
+    let scene: ScaniverseScene
+    let original: AdjustmentParamsProto
+    var current: AdjustmentParamsProto
+
+    func 0002b924(){}
+    func 0002bfb0(){}
+}
+
+class ScannerViewController: So16UIViewControllerC {
+    let headerView: UIView
+    let statusView: ScanStatusView
+    let closeButton: UIButton
+    let debugView: ScaniverseTextField
+    let scannerView: ScannerView
+    let coachingView: ARCoachingOverlayView
+    let optionsView: ScanOptionsView
+    let recordButton: RecordButton
+    let pauseButton: PauseButton
+    let busyIndicator: UIActivityIndicatorView
+    let shutterControl: ShutterControl
+    let feedback: UISelectionFeedbackGenerator
+    let tipManager: ScannerTipManager
+    let depthComputer: DepthComputer
+    let orientationManager: DeviceOrientationManager
+    let device: 0x02692505
+    let scanManager: 0x021b2005
+    let locationRecorder: LocationRecorder
+    let scanSize: ScanSizeHint
+    var featurePointRenderer: 0x02412405
+    var raycastRenderer: 0x02f12305
+    let debugRenderer: 0x02492305
+    let session: ARSession
+    var trackingState: 0x021d2d05
+    var range: 0x02172005
+    var isVisible: Bool
+    var viewDidLoadTime: Double
+    var isShowingCoachingView: Bool
+    var hasShownCaptureTip: Bool
+    var hasDepth: Bool
+
+    func 0002e780(){}
+    func 0002eb3c(){}
+    func 0002f368(){}
+    func 0002f714(){}
+    func 0002fc60(){}
+    func 0002fda8(){}
+    func 0003056c(){}
+    func 00030948(){}
+    func 00030b20(){}
+    func 00030f50(){}
+    func 00033294(){}
+    func 00033e68(){}
+}
+
+class SignInViewController: So16UIViewControllerC {
+    var delegate: So28SignInViewControllerDelegateC?
+    let dimmerView: UIView
+    let dialogView: UIView
+    let titleLabel: UILabel
+    let messageLabel: UILabel
+    let closeButton: UIButton
+    let appleButton: Int
+    let googleButton: Int
+    var buttonStackView: UIStackView?
+    let busyContainer: UIView
+    let busyIndicator: UIActivityIndicatorView
+    let transitionManager: ModalTransitionManager
+    var appleNonce: String?
+    var isStarted: Bool
+    var signInMethod: String
+
+    func 0003824c(){}
+    func 00038330(){}
+    func 000387e0(){}
+    func 00038dd8(){}
+    func 00039284(){}
+    func 000398b0(){}
+    func 00039c30(){}
+}
+
+class CropBox {
+    var center: 0x021f3005
+    var size: 0x021f3005
+    var pointSize: Float
+    var shape: CropShape
+    var viewpoint: CroppingViewpoint
+    let rootNode: SCNNode
+    let cornerNodes: Swift.Array<SCNNode>
+    let edgeNodes: Swift.Array<SCNNode>
+    let ringNode: SCNNode
+    let material: SCNMaterial
+
+    func 0003b000(){}
+    func 0003b07c(){}
+    func 0003ba84(){}
+    func 0003c014(){}
+    func 0003c56c(){}
+}
+
+class LabeledToggle: So9UIControlC {
+    var delegate: So21LabeledToggleDelegateC?
+    let label: UILabel
+    let toggle: UISwitch
+    let helpButton: UIButton
+
+}
+
+class ScaniverseScene: So8SCNSceneC {
+    let modelNode: SCNNode
+    let targetNode: SCNNode
+    let cameraNode: SCNNode
+    var cropBound: 0x02851f05
+    var cropShape: CropShape
+    var isEditingCrop: Bool
+    var viewOrientation: Orientation
+    let device: MTLDevice
+    let textureProcessor: TextureProcessor
+    var modelTexture: MTLTexture?
+
+    func 0003dd44(){}
+    func 0003de10(){}
+    func 0003e038(){}
+    func 0003e1f8(){}
+    func 0003e364(){}
+    func 0003e918(){}
+    func 0003edfc(){}
+    func 0003f638(){}
+    func 0003f7fc(){}
+    func 0003fb3c(){}
+}
+
+class ScanDownloader {
+    let downloadURL: 0x028d1e05
+    var directory: Directory?
+    let storeDir: 0x028d1e05
+    var task: NSURLSessionDataTask?
+
+    func 000405e4(){}
+    func 00040f40(){}
+    func 0004125c(){}
+    func 00041c78(){}
+}
+
+class TickSlider: So9UIControlC {
+    var bumpWhenCrossingValue: Float?
+    let feedbackGenerator: UIImpactFeedbackGenerator
+    let scrollView: UIScrollView
+    let tapeView: TapeView
+    let needleView: NeedleView
+    var isInLayoutSubviews: Bool
+    var _value: Float
+
+    func 000451d4(){}
+    func 000453f8(){}
+    func 000455b8(){}
+}
+
+class TapeView: So6UIViewC {
+    var minValue: Float
+    var maxValue: Float
+    var majorSize: Float
+    var minorSubdivisions: Int
+    var pointsPerUnit: 0x02fd2405
+    var tickHeight: 0x02fd2405
+    var font: UIFont
+    var format: String
+    var margins: UIEdgeInsets
+    var majorTickColor: UIColor
+    var minorTickColor: UIColor
+    var textColor: UIColor
+
+}
+
+class NeedleView: So6UIViewC {
+    var value: Float
+    var font: UIFont
+    var color: UIColor
+    var format: String
+
+}
+
+class FlyByAnimation {
+    let duration: Double
+    let updatesTarget: Bool
+    var basePitch: Float
+    var baseYaw: Float
+    var baseZoom: Float
+
+    func 00046c58(){}
+    func 00046d48(){}
+    func 00046e54(){}
+    func 00046f64(){}
+    func 0004709c(){}
+}
+
+class TokenStore {
+    let service: String
+
+    func 0004a1c4(){}
+    func 0004a59c(){}
+    func 0004a900(){}
+}
+
+class UserCache {
+    let maxAge: Double
+    var entries: Swift.Dictionary<Swift.String, Record>
+
+    func 0004c784(){}
+}
+
+class ScanDetailsView: So6UIViewC {
+    var scan: SharedScan
+    let locationLabel: UILabel
+    let timeLabel: UILabel
+
+    func 0004dc44(){}
+}
+
+class ScanListViewController: So16UIViewControllerC {
+    let headerView: UIView
+    let titleView: UIImageView
+    let settingsButton: UIButton
+    let displayTypeControl: UISegmentedControl
+    let tipView: AddScanTipView
+    let releaseNotesBox: ReleaseNotesBox
+    var collectionView: ScanListCollectionView
+    let dateOverlayView: DateOverlayView
+    var dataSource: 0x025b1905
+    var collectionViewTopContraint: 0x02ad2105
+    var updateTimer: NSTimer?
+    var mostRecentID: String
+    var hasAppeared: Bool
+
+    func 0004f300(){}
+    func 0004f900(){}
+    func 0004fe80(){}
+    func 00050144(){}
+    func 000503f4(){}
+    func 00050908(){}
+    func 00050cc0(){}
+    func 00051528(){}
+    func 00052c1c(){}
+}
+
+class SmoothProgressView: So6UIViewC {
+    var progress: NSProgress?
+    var title: String
+    var observation: 0x022d0f05
+    let titleLabel: UILabel
+    let percentLabel: UILabel
+    let progressView: UIProgressView
+    let smoother: ProgressSmoother
+
+    func 000555a4(){}
+    func 00055728(){}
+    func 000558f4(){}
+}
+
+class TarBuilder {
+    var buffer: 0x02991005
+
+}
+
+class TestStatusManager {
+    let view: UITextView
+    var lines: Array<String>
+    var isDirty: Bool
+
+    func 000579d0(){}
+}
+
+class UserCardView: So6UIViewC {
+    var user: User
+    let avatarView: UIImageView
+    let usernameLabel: UILabel
+
+    func 00059f24(){}
+}
+
+class ReconTestRunner {
+    var delegate: So23ReconTestRunnerDelegateC?
+    let mode: ReconstructionMode
+    let testCodes: Array<String>
+    let device: MTLDevice
+    let store: ScanStore
+    let downloader: ScanDownloader
+    let queue: OS_dispatch_queue
+    let baseDir: 0x028d1e05
+    let resultsDir: 0x028d1e05
+    let resultURL: 0x028d1e05
+    var pipeline: 0x020d2605
+    var exporter: Exporter
+    var testIndex: Int
+    var isStarted: Bool
+    var isInterrupted: Bool
+    var stopwatch: IteratorProtocol
+    var processingTimes: Array<Double>
+
+    func 0005ac50(){}
+    func 0005af50(){}
+    func 0005b5a8(){}
+    func 0005ba84(){}
+    func 0005be6c(){}
+    func 0005c088(){}
+    func 0005c674(){}
+    func 0005d128(){}
+    func 0005d410(){}
+    func 0005d7d0(){}
+}
+
+class EditorViewController: So16UIViewControllerC {
+    var delegate: So28EditorViewControllerDelegateC?
+    var scan: Scan
+    let mesh: 0x02ad2205
+    let texture: 0x02991005
+    let scene: ScaniverseScene
+    var adjustments: AdjustmentManager
+    let gradientView: GradientView
+    let menuView: EditorMenuView
+    let filterView: EditorFilterView
+    let adjustmentView: EditorAdjustmentView
+    let cropView: EditorCropView
+    let cropController: CropController
+    let cropOverlayView: CropOverlayView
+    let feedback: UIImpactFeedbackGenerator
+    let transitionManager: ReparentingTransitionManager
+
+    func 0005e144(){}
+    func 0005e294(){}
+    func 0005ef98(){}
+    func 0005f050(){}
+    func 0005f130(){}
+    func 0005f230(){}
+    func 0005f314(){}
+    func 0005f3e4(){}
+    func 0005f880(){}
+    func 00060474(){}
+    func 00060604(){}
+}
+
+class UploadScanViewController: So16UIViewControllerC {
+    var delegate: So32UploadScanViewControllerDelegateC?
+    let progressView: RangeReplaceableCollection
+    let titleLabel: UILabel
+    let closeButton: UIButton
+    var infoStackView: UIStackView
+    let locationView: EditorCropView
+    let captureTimeItemView: InfoItemView
+    let uploadTimeItemView: InfoItemView
+    let idsItemView: InfoItemView
+    let startButton: MainButton
+    let cancelButton: MainButton
+    let scan: Scan
+    let uploader: NianticUploader
+
+    func 000651e4(){}
+    func 0006539c(){}
+    func 000655d0(){}
+    func 000673cc(){}
+    func 00067b80(){}
+}
+
+class ScanSizeViewController: So16UIViewControllerC {
+    var delegate: So30ScanSizeViewControllerDelegateC?
+    let dimmerView: UIView
+    let dialogView: UIView
+    let titleLabel: UILabel
+    let descriptionLabel: UILabel
+    var buttonStackView: UIStackView?
+    let tipsButton: MainButton
+    let closeButton: UIButton
+    let transitionManager: ModalTransitionManager
+
+    func 0006ae60(){}
+}
+
+class ScanSizeButton: So8UIButtonC {
+    let size: ScanSizeHint
+    let container: UIView
+    let iconView: UIImageView
+    let nameLabel: UILabel
+    let descriptionLabel: UILabel
+
+}
+
+class ScannerDebugView: So6UIViewC {
+    var delegate: So24ScannerDebugViewDelegateC?
+    var debugMode: 0x022d1e05
+    let label: UILabel
+    let modeButton: UIButton
+
+    func 0006d5cc(){}
+    func 0006d930(){}
+}
+
+class FilterPreviewRenderer {
+    let device: MTLDevice
+    let commandQueue: MTLCommandQueue
+    let previewSize: Int
+    var srcTexture: MTLTexture?
+    var dstTexture: MTLTexture?
+    let applyLutKernel: ComputeKernel
+    let queue: OS_dispatch_queue
+
+    func 0006e398(){}
+    func 0006e694(){}
+    func 0006eca4(){}
+}
+
+class SettingsViewController: So16UIViewControllerC {
+    var busyView: BusyView
+    let dataSource: SettingsDataSource
+    let secretMenuCode: KonamiCode
+    let headerView: UIView
+    let titleLabel: UILabel
+    let closeButton: UIButton
+    var tableView: UITableView?
+    let footerView: UIView
+    let versionLabel: UILabel
+    let copyrightLabel: UILabel
+
+    func 0006f3dc(){}
+    func 00070098(){}
+    func 0007040c(){}
+    func 00070868(){}
+    func 00070b38(){}
+    func 00070f30(){}
+    func 00071278(){}
+    func 00071550(){}
+}
+
+class Block {
+    let coords: 0x02632d05
+    let blockSize: Float
+    let lo: 0x021f3005
+    var positions: SaySo0CG
+    var colors: SaySo0CG
+    var normals: SaySo0CG
+
+    func 000746f8(){}
+    func 000747e8(){}
+    func 000748dc(){}
+    func 00074e90(){}
+}
+
+class AutoProgress: So10NSProgressC {
+
+    func 00077918(){}
+}
+
+class SetVisibilityViewController: So16UIViewControllerC {
+    var delegate: So35SetVisibilityViewControllerDelegateC?
+    let service: ScaniverseService
+    let scan: SharedScan
+    let dimmerView: UIView
+    let dialogView: UIView
+    let titleLabel: UILabel
+    let busyIndicator: UIActivityIndicatorView
+    var buttonStackView: UIStackView?
+    let closeButton: UIButton
+    let unlistedButton: VisibilityButton
+    let publicButton: VisibilityButton
+    let transitionManager: ModalTransitionManager
+
+    func 000794e8(){}
+    func 00079894(){}
+}
+
+class VisibilityButton: So8UIButtonC {
+    let nameLabel: UILabel
+    let descriptionLabel: UILabel
+    let iconView: UIImageView
+
+}
+
+class KonamiCode {
+    let sequence: Swift.Array<Button>
+    var step: Int
+
+    func 0007b774(){}
+}
+
+class LowPassFilter {
+    var alpha: Float
+    var lastOutput: A?
+
+}
+
+class OneEuroFilter {
+    let freq: Float
+    let minCutoff: Float
+    let beta: Float
+    let xFilter: LowPassFilter<A>
+    let dxFilter: LowPassFilter<A>
+    var lastInput: A?
+
+}
+
+class EllipticalAnimation {
+    let duration: Double
+    let updatesTarget: Bool
+    var baseZoom: Float
+    var baseYaw: Float
+
+    func 0007bec0(){}
+    func 0007bfd0(){}
+}
+
+class ScanPoster {
+    var delegate: So18ScanPosterDelegateC?
+    let progress: NSProgress
+    var state: State
+    let background: BackgroundTask
+    let scan: Scan
+    let mesh: 0x02ad2205
+    let exporter: ScanSharingExporter
+    var signature: String?
+    var uploadTask: weak NSURLSessionTask?
+    var postTask: weak NSURLSessionTask?
+    var caption: String?
+    var includeLocation: Bool
+    var visibility: ScanVisibility
+
+    func 0007c6b0(){}
+    func 0007cae8(){}
+    func 0007d34c(){}
+    func 0007e6ac(){}
+    func 0007e8dc(){}
+}
+
+class SketchfabClient {
+    var context: weak ASWebAuthenticationPresentationContextProviding?
+    let state: String
+    let tokenStore: TokenStore
+    var tokenInfo: TokenInfo?
+    var authSession: ASWebAuthenticationSession?
+    var uploadTask: NSURLSessionUploadTask?
+
+    func 0007fd7c(){}
+    func 00080e08(){}
+    func 00081148(){}
+    func 000823d0(){}
+}
+
+class MainButton: So8UIButtonC {
+    var isDimmed: Bool
+
+    func 00083a00(){}
+}
+
+class UsernameViewController: So16UIViewControllerC {
+    var delegate: So30UsernameViewControllerDelegateC?
+    let user: User
+    let contentContainer: UIView
+    let titleLabel: UILabel
+    let usernameLabel: UILabel
+    let usernameField: ScaniverseTextField
+    let messageLabel: UILabel
+    let cancelButton: MainButton
+    let saveButton: MainButton
+    let loadingIndicator: UIActivityIndicatorView
+    var isBusy: Bool
+
+    func 00084154(){}
+    func 000843dc(){}
+    func 000849b0(){}
+    func 00084c3c(){}
+    func 00084dbc(){}
+    func 00085174(){}
+}
+
+class DateOverlayView: So6UIViewC {
+    let label: UILabel
+    var isActive: Bool
+    var lastScrolledAt: Double
+    var currentDisplayedTimestamp: Double
+    let dateFormatter: NSDateFormatter
+
+    func 000876c0(){}
+}
+
+class ExportFileManager {
+    let baseURL: 0x028d1e05
+    let fm: NSFileManager
+    let dateFormatter: NSDateFormatter
+    let timeFormatter: NSDateFormatter
+    let queue: OS_dispatch_queue
+
+    func 0008883c(){}
+    func 000890e8(){}
+    func 000893a4(){}
+}
+
+class VideoWriter {
+    let width: Int
+    let height: Int
+    let timeUnitsPerFrame: 0x02b32505
+    let writer: AVAssetWriter?
+    let input: AVAssetWriterInput
+    let adaptor: AVAssetWriterInputPixelBufferAdaptor
+    var isRecording: Bool
+    var frameTime: 0x02b32505
+
+    func 0008a36c(){}
+    func 0008a654(){}
+}
+
+class BusyView: So6UIViewC {
+    let label: UILabel
+    let activityIndicator: UIActivityIndicatorView
+    var desiredState: State
+    var currentState: State
+
+}
+
+class ScannerTipManager {
+    let view: OverlayTipView
+    let scanManager: 0x021b2005
+    let isObject: Bool
+    var trackingState: 0x021d2d05
+    var hasShownInstructions: Bool
+    var tip: TipType?
+
+    func 0008cf54(){}
+    func 0008db44(){}
+    func 0008de7c(){}
+}
+
+class SettingsDataSource: So8NSObjectC {
+    var sections: Swift.Array<SettingsSection>?
+
+    func 0008e5d4(){}
+    func 00090bf4(){}
+}
+
+class ScanListCell: So20UICollectionViewCellC {
+    var delegate: So20ScanListCellDelegateC?
+    var scanID: String?
+    var scan: Scan
+    var showOverlay: Bool
+    var contextMenu: UIMenu
+    let cardView: UIView
+    let imageView: UIImageView
+    let gradientView: GradientView
+    let nameLabel: UILabel
+    let detailsLabel: UILabel
+    let moreButton: UIButton
+
+    func 00093af4(){}
+    func 0009403c(){}
+    func 0009468c(){}
+    func 00094790(){}
+}
+
+class ScaniverseService {
+    let backend: String
+
+    func 00096be8(){}
+    func 000970a4(){}
+    func 00097280(){}
+    func 000974d8(){}
+    func 00097a64(){}
+    func 00097f5c(){}
+    func 00098230(){}
+    func 000985bc(){}
+    func 00098854(){}
+}
+
+class SignInButton: So8UIButtonC {
+    let provider: Provider
+    let iconView: UIImageView
+
+}
+
+class PostToSketchfabViewController: So16UIViewControllerC {
+    var delegate: So37PostToSketchfabViewControllerDelegateC?
+    let scan: Scan
+    let mesh: 0x02ad2205
+    let texture: MTLTexture
+    let exporter: Exporter
+    var sketchfabClient: RandomAccessCollection
+    var modelURL: 0x02351805
+    let closeButton: UIButton
+    let titleLabel: UILabel
+    let mainContainer: UIView
+    let titleField: ScaniverseTextField
+    let descriptionView: UITextView
+    let descriptionPlaceholderLabel: UILabel
+    let locationContainer: UIView
+    let locationLabel: UILabel
+    let locationSwitch: UISwitch
+    let draftButton: MainButton
+    let postButton: MainButton
+    let busyIndicator: UIActivityIndicatorView
+    let busyLabel: UILabel
+    let progressView: UIProgressView
+    var isFirstAppearance: Bool
+    var busyState: BusyState
+
+    func 0009c99c(){}
+    func 0009cc7c(){}
+    func 0009d420(){}
+    func 0009dc5c(){}
+    func 0009debc(){}
+    func 0009e464(){}
+    func 0009e828(){}
+    func 0009ebd8(){}
+}
+
+class InOutAroundAnimation {
+    let duration: Double
+    let updatesTarget: Bool
+    var basePitch: Float
+    var baseYaw: Float
+    var baseZoom: Float
+
+    func 000a268c(){}
+    func 000a2850(){}
+    func 000a2a30(){}
+}
+
+class DepthComputer {
+    let commandQueue: MTLCommandQueue
+    let imageProcessor: 0x02d11305
+    let depthManager: DepthManager
+    let depthSize: MTLSize
+    var pixels: SaySo0CG
+    let queue: OS_dispatch_queue
+    let throttle: 0x02911605
+    var startTime: Double
+    var framesProcessed: Int
+    var intervalProcessingTime: Double
+
+    func 000a2da8(){}
+    func 000a31f4(){}
+}
+
+class ShareViewController: So16UIViewControllerC {
+    let scan: Scan
+    let mesh: 0x02ad2205
+    let texture: MTLTexture
+    let dimmerView: UIView
+    let dialogView: UIView
+    let titleLabel: UILabel
+    let busyIndicator: UIActivityIndicatorView
+    var buttonStackView: UIStackView?
+    let closeButton: UIButton
+    let helpButton: UIButton
+    let scaniverseButton: ShareButton
+    let messagesButton: ShareButton
+    let sketchfabButton: ShareButton
+    let videoButton: ShareButton
+    let exportButton: ShareButton
+    let transitionManager: ModalTransitionManager
+    var exporter: Exporter
+
+    func 000a8d28(){}
+    func 000a66bc(){}
+    func 000a67c4(){}
+    func 000a695c(){}
+    func 000a69ac(){}
+    func 000a6b28(){}
+    func 000a6cb4(){}
+    func 000a6fcc(){}
+    func 000a770c(){}
+    func 000a79cc(){}
+    func 000a7b10(){}
+    func 000a7d50(){}
+    func 000a7e40(){}
+}
+
+class GaussianBlurKernel {
+    let horizontalKernel: ComputeKernel
+    let verticalKernel: ComputeKernel
+
+}
+
+class ScreenQuad {
+    let device: MTLDevice
+    let vertexBuffer: MTLBuffer
+    let pipelineState: MTLRenderPipelineState
+
+    func 000a8fc8(){}
+}
+
+class ShutterControl {
+    var delegate: So22ShutterControlDelegateC?
+    let volumeView: MPVolumeView
+    let notificationName: String
+    let reasonKey: String
+    let changeTypeKey: String
+    var isActivated: Bool
+    var isDebouncing: Bool
+    var initialVolume: Float
+    var lastSequenceNumber: Int
+
+    func 000a9358(){}
+    func 000a9750(){}
+    func 000a98a8(){}
+    func 000a9ae4(){}
+    func 000aa534(){}
+}
+
+class AnimationController {
+    var delegate: So27AnimationControllerDelegateC?
+    let scan: Scan
+    let scene: ScaniverseScene
+    var initialCameraPosition: CameraState
+    var animation: ScaniverseAnimation
+    var speed: Float
+    var isReversed: Bool
+    var progress: Float
+    var isRunning: Bool
+    var newAnimation: ScaniverseAnimation
+    var hasProgressUpdate: Bool
+    var hasManualUpdate: Bool
+    var lastUpdateTime: Double
+    let stateQueue: OS_dispatch_queue
+
+    func 000aaa58(){}
+    func 000aab94(){}
+    func 000aae4c(){}
+    func 000ab4c8(){}
+}
+
+class AppDelegate: So11UIResponderC {
+    let window: UIWindow
+
+    func 000ac514(){}
+    func 000ad780(){}
+}
+
+class MeasurementInfoView: So6UIViewC {
+    var delegate: So27MeasurementInfoViewDelegateC?
+    let headerView: MeasurementHeaderView
+    let measurementContainer: UIView
+    let totalTextLabel: UILabel
+    let totalLabel: UILabel
+
+    func 000b12cc(){}
+}
+
+class MeasurementHeaderView: So6UIViewC {
+    var delegate: So29MeasurementHeaderViewDelegateC?
+    var canUndo: Bool
+    let titleLabel: UILabel
+    let doneButton: UIButton
+    let undoButton: UIButton
+    let shareButton: UIButton
+
+    func 000b3014(){}
+    func 000b30c4(){}
+    func 000b3160(){}
+}
+
+class ProgressSmoother {
+    var delegate: So24ProgressSmootherDelegateC?
+    let factor: Float
+    var progress: Float
+    var target: Float
+    var isUpdating: Bool
+
+    func 000b343c(){}
+    func 000b3564(){}
+}
+
+class PopupView: So6UIViewC {
+    var hideDelay: Double
+    var label: UILabel?
+    var imageView: UIImageView?
+
+    func 000b3e0c(){}
+    func 000b44c4(){}
+}
+
+class Stopwatch {
+    var start: Double
+    var tag: String?
+
+    func 000b4efc(){}
+    func 000b5068(){}
+}
+
+class ScanLoader {
+    var delegate: So18ScanLoaderDelegateC?
+    let backend: String
+    let scan: SharedScan
+    var owner: User
+    var mesh: 0x02411e05
+    var textureLowRes: 0x02dd1305
+    var texture: 0x02dd1305
+    let userCache: UserCache
+    var tasks: Array<NSURLSessionTask>
+
+    func 000b55ec(){}
+    func 000b5900(){}
+    func 000b5c20(){}
+    func 000b63c0(){}
+    func 000b65f4(){}
+}
+
+class ViewTypeSelector: So6UIViewC {
+    var delegate: So24ViewTypeSelectorDelegateC?
+    var selectedType: ViewType
+    var isActivated: Bool
+    let titleLabel: UILabel
+    var buttons: Swift.Array<ScanOptionButton>
+    var stackView: UIStackView?
+
+    func 000b95c8(){}
+}
+
+class ExportViewController: So16UIViewControllerC {
+    var delegate: So28ExportViewControllerDelegateC?
+    let scan: Scan
+    let mesh: 0x02ad2205
+    let texture: MTLTexture
+    let dimmerView: UIView
+    let dialogView: UIView
+    let titleLabel: UILabel
+    let exportingIndicator: UIActivityIndicatorView
+    var buttonStackView: UIStackView?
+    var formatButtons: Swift.Array<ExportFormatButton>
+    let closeButton: UIButton
+    let transitionManager: ModalTransitionManager
+    var exporter: Exporter
+
+    func 000bea1c(){}
+    func 000bbc88(){}
+    func 000bbddc(){}
+    func 000bd4e0(){}
+    func 000bd900(){}
+    func 000bdb18(){}
+    func 000bdd10(){}
+    func 000bde6c(){}
+}
+
+class FooterCell: So20UICollectionViewCellC {
+    var delegate: So18FooterCellDelegateC?
+    var footerType: FooterType
+    var username: String?
+    var stackView: UIStackView?
+    let cardView: UIView
+    let titleLabel: UILabel
+    let messageLabel: UILabel
+    let actionButton: UIButton
+    let loadingIndicator: UIActivityIndicatorView
+
+    func 000bfeb4(){}
+}
+
+class Logger {
+
+}
+
+class LoggerImpl {
+    let queue: OS_dispatch_queue
+    let dateFormatter: NSDateFormatter
+    var buffer: CircularBuffer
+    var onceTags: SDySSSo0CG
+
+    func 000c0bf4(){}
+    func 000c0ce4(){}
+    func 000c0f8c(){}
+    func 000c12e4(){}
+}
+
+class RawDataExporter {
+    let scanID: String
+    let queue: OS_dispatch_queue
+    let cancelQueue: OS_dispatch_queue
+    var _isCancelled: Bool
+
+    func 000c96c0(){}
+    func 000c988c(){}
+}
+
+class RecordButton: So8UIButtonC {
+    let centerView: UIView
+    var isRecording: Bool
+    var showProgress: Bool
+    var progress: Float
+
+}
+
+class MainTabController: So18UITabBarControllerC {
+
+    func 000cb7d4(){}
+    func 000cbcb8(){}
+    func 000cbdf8(){}
+    func 000cc1ec(){}
+}
+
+class ReconTestViewController: So16UIViewControllerC {
+    let status: TestStatusManager
+    var runner: ReconTestRunner
+    let headerView: UIView
+    var serverControl: UISegmentedControl?
+    var sizeControl: UISegmentedControl?
+    var pipelineControl: UISegmentedControl?
+    let closeButton: UIButton
+    let startButton: UIButton
+    let progressBar: UIProgressView
+    let successLabel: UILabel
+    var resultURL: 0x02351805
+
+    func 000cc8d8(){}
+    func 000ccf18(){}
+    func 000cd188(){}
+}
+
+class ProcessorStrings {
+
+}
+
+class TipsViewController: So16UIViewControllerC {
+    let gradientView: GradientView
+    var collectionView: UICollectionView
+    var pageControl: UIPageControl
+    let closeButton: UIButton
+    let nextButton: UIButton
+    var dataSource: 0x024d0805
+    var currentIndex: Int
+
+    func 000d0fbc(){}
+    func 000d1110(){}
+    func 000d12d8(){}
+    func 000d17e8(){}
+}
+
+class TipCell: So20UICollectionViewCellC {
+    let container: UIView
+    let textView: UITextView
+    let videoView: VideoPlayerView
+
+    func 000d3884(){}
+}
+
+class DropInAnimation {
+    let duration: Double
+    let updatesTarget: Bool
+    var startZoom: Float
+    var endZoom: Float
+    var startPitch: Float
+    var endPitch: Float
+
+    func 000d564c(){}
+    func 000d59dc(){}
+    func 000d5a7c(){}
+}
+
+class EditorMenuView: So6UIViewC {
+    var delegate: So22EditorMenuViewDelegateC?
+    let headerView: PanelHeaderView
+    let adjustments: Swift.Array<AdjustmentType>
+    var buttons: Swift.Array<UIButton>
+
+    func 000d6414(){}
+}
+
+class SuccessToast: So6UIViewC {
+    let iconView: UIImageView
+    let textLabel: UILabel
+
+}
+
+class LocalProjector {
+    let baseLatitude: Double
+    let baseLongitude: Double
+    let scale: Double
+    let invScale: Double
+    var origin: 0x02a11905
+
+    func 000dcb94(){}
+}
+
+class NianticPayloadBuilder {
+    let scanUUID: String
+    let totalChunks: Int
+    var progress: NSProgress
+    let scan: Scan
+    let frames: SaySo0CG
+    let maxFramesPerChunk: Int
+    var startIdx: Int
+    var chunkNumber: Int
+    var isCancelled: Bool
+    let queue: OS_dispatch_queue
+
+    func 000dd898(){}
+    func 000ddd1c(){}
+}
+
+class ScaniverseTextField: So11UITextFieldC {
+    var scaniverseDelegate: So27ScaniverseTextFieldDelegateC?
+    var type: FieldType
+
+    func 000e3284(){}
+}
+
+class CropController: So8NSObjectC {
+    var delegate: So22CropControllerDelegateC?
+    var view: ScaniverseSceneView
+    var box: CropBox
+    var activeNode: SCNNode?
+    var dragStartPoint: SCNVector3
+    var dragStartOffset: 0x02a33405
+    var panRecognizer: UIPanGestureRecognizer?
+
+    func 000e3af0(){}
+    func 000e3e40(){}
+    func 000e4050(){}
+}
+
+class SwipeDownToDismissController: So36UIPercentDrivenInteractiveTransitionC {
+    let swipeDistance: 0x02090305
+    var vc: weak UIViewController?
+
+    func 000e5ed0(){}
+}
+
+class SystemShareViewController: So24UIActivityViewControllerC {
+    var delegate: So33SystemShareViewControllerDelegateC?
+    var hasNotifiedDelegate: Bool
+    let url: 0x028d1e05
+
+}
+
+class ScaniverseItemSource: So8NSObjectC {
+    let data: 0x02991005
+    let metadata: LPLinkMetadata
+
+    func 000e6c8c(){}
+}
+
+class Analytics {
+
+}
+
+class ScanOptionButton: So8UIButtonC {
+    var isOverVideo: Bool
+
+    func 000ed6e0(){}
+    func 000ed910(){}
+}
+
+class ViewScanViewController: So16UIViewControllerC {
+    var scan: Scan
+    var mesh: 0x02411e05
+    var texture: 0x02dd1305
+    let scene: ScaniverseScene
+    let topGradientView: GradientView
+    let bottomGradientView: GradientView
+    let headerView: UIView
+    let titleLabel: UILabel
+    let detailsLabel: UILabel
+    let backButton: UIButton
+    let moreButton: UIButton
+    let sceneView: ScaniverseSceneView
+    let loadingIndicator: UIActivityIndicatorView
+    var trayView: UIStackView?
+    let helpButton: TrayButton
+    let editButton: TrayButton
+    let measureButton: TrayButton
+    let arButton: TrayButton
+    let shareButton: TrayButton
+    let dimmerView: UIView
+    var isDemo: Bool
+    var isFirstAppearance: Bool
+
+    func 000ee350(){}
+    func 000ee878(){}
+    func 000eebb0(){}
+    func 000ef234(){}
+    func 000ef49c(){}
+    func 000ef724(){}
+    func 000f0438(){}
+    func 000f0d6c(){}
+    func 000f31e8(){}
+}
+
+class ExportFormatButton: So8UIButtonC {
+    let format: ExportFormat
+    let nameLabel: UILabel
+    let descriptionLabel: UILabel
+
+}
+
+class SocialViewController: So22UINavigationControllerC {
+
+    func 000f4fa4(){}
+    func 000f52bc(){}
+    func 000f57f0(){}
+}
+
+class MeasurementViewController: So16UIViewControllerC {
+    let scene: ScaniverseScene
+    let gradientView: GradientView
+    let infoView: MeasurementInfoView
+    let tipView: OverlayTipView
+    let controller: MeasurementController
+    let feedback: UIImpactFeedbackGenerator
+    let transitionManager: ReparentingTransitionManager
+
+    func 000f5d3c(){}
+    func 000f65f4(){}
+    func 000f6c24(){}
+    func 000f6e10(){}
+    func 000f73ec(){}
+}
+
+class StatsService {
+    let url: String
+    var buffer: Swift.Array<Stats>
+    var isScheduled: Bool
+    var isFlushing: Bool
+    var backgroundTask: BackgroundTask
+
+    func 000f8750(){}
+    func 000f8944(){}
+    func 000f8f5c(){}
+}
+
+class Stats {
+    let timestamp: Int
+    let type: String
+    let data: Dictionary<String, Any>
+
+}
+
+class LocationEstimator {
+    var hasEstimate: Bool
+    var projector: LocalProjector
+    var estimatedElevation: Float
+    var rotation: simd_quatf
+
+    func 000f9d34(){}
+    func 000f9e78(){}
+    func 000fbd58(){}
+}
+
+class TestingHelper {
+
+}
+
+class ReportScanViewController: So16UIViewControllerC {
+    let service: ScaniverseService
+    let scanID: String
+    let dimmerView: UIView
+    let dialogView: UIView
+    let titleLabel: UILabel
+    let bodyLabel: UILabel
+    let busyIndicator: UIActivityIndicatorView
+    var buttonStackView: UIStackView?
+    let closeButton: UIButton
+    let transitionManager: ModalTransitionManager
+
+    func 000fe640(){}
+    func 000fedf4(){}
+    func 000ff0e8(){}
+}
+
+class ReasonButton: So8UIButtonC {
+    let reason: FlagReason
+    let text: String
+    let label: UILabel
+
+}
+
+class SetValueViewController: So16UIViewControllerC {
+    var delegate: So30SetValueViewControllerDelegateC?
+    let spec: SettableValue
+    let valueField: ScaniverseTextField
+    let closeButton: UIButton
+    let saveButton: MainButton
+    let infoLabel: UILabel
+
+    func 00101568(){}
+}
+
+class ModalTransitionManager: So8NSObjectC {
+    var isPresenting: Bool
+    var dismissController: UIViewControllerInteractiveTransitioning?
+
+    func 0010213c(){}
+}
+
+class UpdateManager {
+    let previousLaunchBuild: Int
+    var shouldShowReleaseNotes: Bool
+
+    func 00102700(){}
+}
+
+class LoadProfileViewController: LoadingViewController {
+    let service: ScaniverseService
+    let username: String
+
+}
+
+class PanelHeaderView: So6UIViewC {
+    var delegate: So23PanelHeaderViewDelegateC?
+    var title: String
+    let titleLabel: UILabel
+    let cancelButton: UIButton
+    let doneButton: UIButton
+
+}
+
+class Strings {
+
+}
+
+class ImmediatePanGestureRecognizer: So22UIPanGestureRecognizerC {
+}
+
+class ScanSharingExporter {
+    let scan: Scan
+    let mesh: 0x02ad2205
+    let texture: MTLTexture
+    let cancelQueue: OS_dispatch_queue
+    var _isCancelled: Bool
+    var meshData: 0x02dd1305
+    var textureLo: 0x02dd1305
+    var textureHi: 0x02dd1305
+    var preview: 0x02dd1305
+    var thumbnail: 0x02dd1305
+    var scanProto: 0x02dd1305
+    var framesProto: 0x02dd1305
+    var outURL: 0x02351805
+    var completion: (Bool) -> ()?
+
+    func 00104968(){}
+    func 00104b3c(){}
+    func 0010593c(){}
+    func 00105c48(){}
+    func 00105fb8(){}
+    func 00106a48(){}
+    func 00106e00(){}
+    func 00107c64(){}
+}
+
+class CropCameraController {
+    var isPanningOrZooming: Bool
+    var viewpoint: CroppingViewpoint
+    var minDistance: Float
+    var maxDistance: Float
+    var zoomStartDistance: Float
+    let eulerAngles: SDySo0CG
+
+    func 00108c94(){}
+    func 00108f0c(){}
+    func 00109154(){}
+}
+
+class VideoCreator: So8NSObjectC {
+    let progress: NSProgress
+    let animationController: AnimationController
+    let resolution: 0x02090305
+    let fps: Double
+    let scene: ScaniverseScene
+    let renderer: SCNRenderer
+    let writer: VideoWriter
+    let texture: MTLTexture
+    let multisampleTexture: MTLTexture
+    let passDescriptor: MTLRenderPassDescriptor
+    let stopwatch: IteratorProtocol
+    var framesCompleted: Int
+    var totalFrames: Int
+    var isDone: Bool
+
+    func 0010a2b0(){}
+    func 0010a790(){}
+    func 0010ab70(){}
+}
+
+class NoopAnimation {
+    let motionType: VideoMotionType
+    let duration: Double
+    let updatesTarget: Bool
+
+}
+
+class GradientView: So6UIViewC {
+    var gradientLayer: CAGradientLayer?
+
+    func 0010c434(){}
+    func 0010c610(){}
+}
+
+class HelpViewController: So16UIViewControllerC {
+    let content: HelpContent
+    let backgroundView: UIView
+    let containerView: UIView
+    let titleLabel: UILabel
+    let closeButton: UIButton
+    var webView: WKWebView?
+
+}
+
+class PostToScaniverseViewController: So16UIViewControllerC {
+    var delegate: So38PostToScaniverseViewControllerDelegateC?
+    let scan: Scan
+    let mesh: 0x02ad2205
+    let texture: MTLTexture
+    let placeName: String?
+    let poster: ScanPoster
+    var modelURL: 0x02351805
+    let closeButton: UIButton
+    let titleLabel: UILabel
+    let mainContainer: UIView
+    let captionView: UITextView
+    let captionPlaceholderLabel: UILabel
+    let locationControl: LocationControl
+    let visibilityToggle: VisibilityToggle
+    let postButton: MainButton
+    let progressView: RangeReplaceableCollection
+    var busyState: BusyState
+
+    func 00110960(){}
+    func 00110d14(){}
+    func 00111114(){}
+    func 001112cc(){}
+    func 001114fc(){}
+    func 00111794(){}
+    func 001118dc(){}
+}
+
+class _StorageClass {
+    var _id: String
+    var _createdAt: Double
+    var _modifiedAt: Double
+    var _tzOffsetSeconds: 0x02931005
+    var _name: String
+    var _numFrames: 0x02931005
+    var _numAnchors: 0x02931005
+    var _pointCount: 0x02931005
+    var _totalSizeBytes: 0x02b32505
+    var _rawDataSizeBytes: 0x02b32505
+    var _deprecatedQuality: 0x02931005
+    var _processBuild: 0x02931005
+    var _processMode: 0x02931005
+    var _geometryResolution: Float
+    var _simplification: 0x02931005
+    var _captureBuild: 0x02b32505
+    var _captureDevice: String
+    var _configuration: ScanConfigurationProto?
+    var _adjustments: AdjustmentParamsProto
+    var _captureOrigin: Array<Float>
+    var _location: LocationProto
+    var _place: PlaceProto
+    var _legacyInfo: DeprecatedCaptureInfoProto?
+
+}
+
+class _StorageClass {
+    var _id: 0x02931005
+    var _anchor: 0x02931005
+    var _timestamp: Double
+    var _camera: CameraParamsProto?
+    var _transform: AffineTransformProto?
+    var _exposure: ExposureInfoProto?
+    var _range: DepthRangeProto?
+    var _quality: Float
+    var _isLargeImage: Bool
+
+}
+
+class ConfirmScanView: So6UIViewC {
+    var delegate: So23ConfirmScanViewDelegateC?
+    let titleLabel: UILabel
+    let infoLabel: UILabel
+    let keepRawDataView: KeepRawDataView
+    let changeButton: MainButton
+    let finishButton: MainButton
+
+    func 00130004(){}
+}
+
+class KeepRawDataView: So6UIViewC {
+    let label: UILabel
+    let helpButton: UIButton
+    let toggle: UISwitch
+
+}
+
+class FeatureFlags {
+    var flags: FeatureFlagValues
+
+    func 00133484(){}
+}
+
+class ScannerView: So6UIViewC {
+    var delegate: So19ScannerViewDelegateC?
+    var uiOrientation: UIInterfaceOrientation
+    var isActive: Bool
+    let metalView: MTKView
+    let commandQueue: MTLCommandQueue
+    let quad: ScreenQuad
+
+}
+
+class ScanStore {
+    let baseDir: 0x028d1e05
+    let fm: NSFileManager
+
+    func 001366e0(){}
+    func 00136964(){}
+    func 00137b3c(){}
+    func 00137d6c(){}
+    func 00138688(){}
+    func 001396f0(){}
+    func 00139860(){}
+    func 00139c28(){}
+    func 00139f8c(){}
+    func 00139fb0(){}
+    func 0013a1a8(){}
+}
+
+class LinkViewController: So16UIViewControllerC {
+    let headerView: UIView
+    let closeButton: UIButton
+    let loadingFrame: UIView
+    let loadingIndicator: UIActivityIndicatorView
+    var webView: WKWebView?
+    let url: 0x028d1e05
+
+    func 0013c768(){}
+}
+
+class RoundIconButton: So8UIButtonC {
+    let circleView: UIView
+
+}
+
+class VideoPlayerView: So6UIViewC {
+    var fadeOnLoop: Bool
+    var isPaused: Bool
+    var shouldPreventSleep: Bool
+
+    func 0013e75c(){}
+    func 0013e8a8(){}
+}
+
+class JourneyAnimation {
+    var duration: Double
+    let updatesTarget: Bool
+    var poses: Swift.Array<TwoPointPose>
+    var cameraDistance: Float
+
+    func 0013effc(){}
+    func 0013fdd0(){}
+}
+
+class ReconstructionModeView: So6UIViewC {
+    var delegate: So30ReconstructionModeViewDelegateC?
+    var modes: Swift.Array<ReconstructionMode>
+    let titleLabel: UILabel
+    let infoLabel: UILabel
+    let helpButton: UIButton
+    let buttonStackView: UIStackView
+    var isFirstShow: Bool
+
+    func 00141c2c(){}
+    func 00141f98(){}
+}
+
+class AccountLandingViewController: So16UIViewControllerC {
+    let titleLabel: UILabel
+    let gradientView: GradientView
+    let heroView: UIView
+    let videoView: VideoPlayerView
+    var featuresBox: AccountFeaturesBox
+    let buttonContainer: UIView
+    let signInButton: MainButton
+
+    func 00142810(){}
+}
+
+class AssimpExporter {
+    let mesh: 0x02ad2205
+    let texture: MTLTexture
+    let adjustments: AdjustmentParamsProto
+    let queue: OS_dispatch_queue
+    let cancelQueue: OS_dispatch_queue
+    var _isCancelled: Bool
+
+    func 001444c4(){}
+    func 00144698(){}
+    func 00144b60(){}
+}
+
+class AuthTestViewController: So16UIViewControllerC {
+    let headerView: UIView
+    let closeButton: UIButton
+    let shareButton: UIButton
+    let signInOutButton: MainButton
+    let statusTextView: UITextView
+    var accessToken: String?
+    var userInfo: String
+
+    func 00146278(){}
+    func 00146410(){}
+    func 00146650(){}
+    func 00146708(){}
+    func 001468c4(){}
+    func 0014749c(){}
+}
+
+class TermsViewController: So16UIViewControllerC {
+    var delegate: So27TermsViewControllerDelegateC?
+    let dimmerView: UIView
+    let dialogView: UIView
+    let messageView: UITextView
+    let acceptButton: MainButton
+    let declineButton: MainButton
+    let transitionManager: ModalTransitionManager
+
+}
+
+class EditorAdjustmentView: So6UIViewC {
+    var delegate: So28EditorAdjustmentViewDelegateC?
+    var adjustmentType: AdjustmentType
+    let headerView: PanelHeaderView
+    let slider: TickSlider
+
+    func 0014ba8c(){}
+    func 0014bb30(){}
+}
+
+class RecordedAnimation {
+    let updatesTarget: Bool
+    var isRecording: Bool
+    var frames: Swift.Array<RecordedFrame>
+    let throttle: 0x02911605
+
+    func 0014bf8c(){}
+    func 0014bfdc(){}
+    func 0014c194(){}
+}
+
+class ReverseGeocoder {
+    var place: PlaceProto
+    let geocoder: CLGeocoder
+
+    func 0014c4e0(){}
+}
+
+class LoadingViewController: So16UIViewControllerC {
+    var dismissOnBackgroundTap: Bool
+    var loadingDelay: Double
+    var message: String
+    var isDismissed: Bool
+    var hasAppeared: Bool
+    let transitionManager: ModalTransitionManager
+    let dimmerView: UIView
+    let dialogView: UIView
+    let loadingIndicator: UIActivityIndicatorView
+    let titleLabel: UILabel
+
+    func 0014d778(){}
+}
+
+class UploadedScanManager {
+    var scansByID: Swift.Dictionary<Swift.String, UploadedScan>
+
+    func 0014f4c4(){}
+}
+
+class SharedScanCell: So20UICollectionViewCellC {
+    var delegate: So22SharedScanCellDelegateC?
+    var scan: SharedScan
+    let userCache: UserCache
+    var loader: ScanLoader
+    let scene: ScaniverseScene
+    let sceneView: ScaniverseSceneView
+    let sceneViewContainer: UIView
+    let footerView: UIView
+    let userCardView: UserCardView
+    let scanDetailsView: ScanDetailsView
+    let captionLabel: UILabel
+    let loadingIndicator: UIActivityIndicatorView
+
+    func 0015352c(){}
+    func 00153688(){}
+    func 00153ab4(){}
+    func 00153ee0(){}
+}
+
+class ProfileViewController: So16UIViewControllerC {
+    let headerView: UIView
+    let closeButton: UIButton
+    let titleLabel: UILabel
+    let exploreButton: MainButton
+    let refreshControl: UIRefreshControl
+    var collectionView: UICollectionView?
+    var dataSource: 0x0241f804
+    let feed: FeedManager
+    var user: User
+    let isShowingSelf: Bool
+    var isFirstAppearance: Bool
+    var shouldCheckForUpdates: Bool
+
+    func 0015b2e4(){}
+    func 0015b6f4(){}
+    func 0015b8f4(){}
+    func 0015bd38(){}
+    func 0015bfbc(){}
+    func 0015c548(){}
+}
+
+class PauseButton: So8UIButtonC {
+    var isOverVideo: Bool
+
+    func 001648e8(){}
+}
+
+class SceneKitExporter {
+    let scene: SCNScene
+    let queue: OS_dispatch_queue
+    let cancelQueue: OS_dispatch_queue
+    var _isCancelled: Bool
+
+    func 001651b4(){}
+    func 00165380(){}
+    func 00165850(){}
+}
+
+class LaunchQuickLookViewController: So16UIViewControllerC {
+    let dimmerView: UIView
+    let dialogView: UIView
+    let titleLabel: UILabel
+    let loadingIndicator: UIActivityIndicatorView
+    let transitionManager: ModalTransitionManager
+    let exporter: SceneKitExporter
+    var isVisible: Bool
+    var hasLaunched: Bool
+    var isFailure: Bool
+    var modelURL: 0x02351805
+
+    func 0016612c(){}
+    func 00166db8(){}
+}
+
+class InfoViewController: So16UIViewControllerC {
+    var delegate: So26InfoViewControllerDelegateC?
+    let titleLabel: UILabel
+    let dateLabel: UILabel
+    let locationView: EditorCropView
+    let geometryItemView: InfoItemView
+    let sizeItemView: InfoItemView
+    let processingItemView: InfoItemView
+    let closeButton: UIButton
+    let renameButton: UIButton
+    let deleteButton: UIButton
+    let reprocessButton: UIButton
+    let clearRawButton: UIButton
+    let store: ScanStore
+    var scan: Scan
+    let numVertices: Int
+    let numTriangles: Int
+    let textureWidth: Int
+
+    func 0016b090(){}
+    func 0016b21c(){}
+    func 0016b668(){}
+    func 0016ba38(){}
+    func 0016bbb8(){}
+    func 0016c344(){}
+}
+
+class DeviceOrientationManager {
+    let motionManager: CMMotionManager
+    var orientation: UIDeviceOrientation
+
+    func 0016db70(){}
+}
+
+class BackgroundTask {
+    let name: String
+    var backgroundID: UIBackgroundTaskIdentifier
+
+    func 0016dc48(){}
+    func 0016de34(){}
+    func 0016e028(){}
+}
+
+class MultiArray {
+    var items: Swift.Array<Item>
+
+    func 0016e8e8(){}
+    func 0016eb44(){}
+    func 0016ee0c(){}
+    func 0016f068(){}
+    func 0016f070(){}
+    func 0016f18c(){}
+    func 0016f2c4(){}
+}
+
+class InfoItemView: So6UIViewC {
+    let nameLabel: UILabel
+    let valueLabel: UILabel
+    var name: String
+    var value: String
+
+}
+
+class AddScanTipView: So6UIViewC {
+    let tip1Label: UILabel
+    let tip2Label: UILabel
+    let tip3Label: UILabel
+    let arrowView: UIImageView
+
+    func 00171798(){}
+}
+
+class ProcessScanViewController: So16UIViewControllerC {
+    var step: IteratorProtocol
+    var scan: Scan
+    let isReprocessing: Bool
+    let allowDeletion: Bool
+    var discourageObjectModeReason: DiscourageObjectModeReason
+    let preloadedPoints: 0x02612005
+    let draftScene: ScaniverseScene
+    let processedScene: ScaniverseScene
+    let pipelineFactory: PipelineFactory
+    var pipeline: 0x020d2605
+    var pipelineStopwatch: IteratorProtocol
+    let locationEstimator: LocationEstimator
+    let geocoder: ReverseGeocoder
+    var mesh: 0x02411e05
+    var texture: 0x02dd1305
+    var pointCloud: 0x02612005
+    var origin: 0x021f3005
+    var reconstructionMode: ReconstructionMode
+    var isSimplified: Bool
+    var geometryResolution: Float
+    let gradientView: GradientView
+    let headerView: UIView
+    let closeButton: UIButton
+    let saveButton: UIButton
+    let sceneView: ScaniverseSceneView
+    let uiContainer: UIView
+    var modeView: ReconstructionModeView
+    let processingView: ProcessingStatusView
+    let confirmView: ConfirmScanView
+    let loadingIndicator: UIActivityIndicatorView
+    let feedback: UIImpactFeedbackGenerator
+    var sceneViewBottomConstraintNormal: 0x02ad2105
+    var sceneViewBottomConstraintConfirm: 0x02ad2105
+    var isFirstAppearance: Bool
+
+    func 00171d70(){}
+    func 00172270(){}
+    func 0017265c(){}
+    func 00172728(){}
+    func 00172810(){}
+    func 00173308(){}
+    func 001735c0(){}
+    func 00173818(){}
+    func 00173b38(){}
+    func 00173de0(){}
+    func 0017470c(){}
+    func 00174e6c(){}
+    func 0017505c(){}
+    func 0017645c(){}
+    func 00176800(){}
+    func 00176948(){}
+    func 00176d44(){}
+    func 00176ea0(){}
+    func 001778cc(){}
+    func 00177fd4(){}
+    func 00179014(){}
+}
+
+class VideoSpeedPanel: So6UIViewC {
+    var delegate: So23VideoSpeedPanelDelegateC?
+    let headerView: PanelHeaderView
+    let slider: TickSlider
+
+}
+
+class ExponentialThrottle {
+    let minDelay: Double
+    let maxDelay: Double
+    var numConsecutiveFailures: Int
+    var throttleUntilTime: Double
+
+}
+
+class FeedOverlayButton: So8UIButtonC {
+    let circleView: UIView
+
+}
+
+class ScanStatusView: So6UIViewC {
+    var defaultBackgroundColor: UIColor
+    var scanningState: 0x0279f604
+    var isARReady: Bool
+    let label: UILabel
+
+    func 0017cde0(){}
+    func 0017cf30(){}
+}
+
+class MultipartBuilder {
+    let boundary: String
+    var body: 0x02991005
+
+}
+
+class ToggleSettingsCell: So15UITableViewCellC {
+    let item: SettingsItem
+    let label: UILabel
+    let helpButton: UIButton
+    let toggle: UISwitch
+
+    func 0017fbf8(){}
+}
+
+class NumericSettingsCell: So15UITableViewCellC {
+    let item: SettingsItem
+
+}
+
+class SelectorSettingsCell: So15UITableViewCellC {
+    let item: SettingsItem
+    let selector: UISegmentedControl
+
+    func 00180e78(){}
+}
+
+class SharedScanThumbnailCell: So20UICollectionViewCellC {
+    var scan: SharedScan
+    let cardView: UIView
+    let imageView: UIImageView
+    let visibilityBadge: VisibilityBadge
+    var task: NSURLSessionTask?
+
+    func 00181ff4(){}
+}
+
+class VisibilityBadge: So6UIViewC {
+    var visibility: String
+    let icon: UIImageView
+    let label: UILabel
+
+    func 00182d60(){}
+}
+
+class UploadListViewController: So16UIViewControllerC {
+    let filterControl: UISegmentedControl
+    let vendorIDLabel: UILabel
+    let closeButton: UIButton
+    let noScansLabel: UILabel
+    let collectionView: UICollectionView
+    var dataSource: 0x025b1905
+    var allScanIDs: Array<String>
+    var visibleScanIDs: Array<String>
+
+    func 00183774(){}
+    func 00183cd4(){}
+    func 001840ec(){}
+}
+
+class ReviewService {
+    var hasPromptedForReview: Bool
+
+    func 001874f4(){}
+}
+
+class Zipper {
+    var headers: Swift.Array<FileHeader>
+    var buffer: 0x02991005
+
+    func 00188450(){}
+}
+
+class SpiralAnimation {
+    let duration: Double
+    let updatesTarget: Bool
+    var baseYaw: Float
+    var baseZoom: Float
+    var endPitch: Float
+
+    func 0018a0ec(){}
+    func 0018a2c0(){}
+}
+
+class ReconstructionModeButton: So8UIButtonC {
+    let mode: ReconstructionMode
+    let container: UIView
+    let iconView: UIImageView
+    let nameLabel: UILabel
+    let descriptionLabel: UILabel
+    let methodLabel: UILabel
+    let recommendationContainer: UIView
+    let recommendationLabel: UILabel
+
+}
+
+class Settings {
+
+}
+
+class TextureProcessor {
+    var filter: FilterType
+    var filterIntensity: Float
+    var exposureAdjustment: Float
+    var contrastAdjustment: Float
+    var sharpnessAdjustment: Float
+    let device: MTLDevice
+    let blurKernel: GaussianBlurKernel
+    let textureProcessorKernel: ComputeKernel
+    var needsUpdate: Bool
+    var needsBlur: Bool
+    var inTexture: MTLTexture?
+    var blurTexture: MTLTexture?
+    var outTexture: MTLTexture?
+    var lutTexture: MTLTexture?
+    let fallbackLutTexture: MTLTexture
+
+    func 0018e1fc(){}
+}
+
+class InfoLocationView: So6UIViewC {
+    let mapView: MKMapView
+    let nameLabel: UILabel
+    let detailsLabel: UILabel
+    let placemark: MKPointAnnotation
+    var thumbnailImage: UIImage?
+
+    func 0018f55c(){}
+}
+
+class ScanAnnotationView: So16MKAnnotationViewC {
+    let containerView: UIView
+    let imageView: UIImageView
+    let nubView: UIView
+
+}
+
+class VisibilityToggle: So9UIControlC {
+    var delegate: So24VisibilityToggleDelegateC?
+    let label: UILabel
+    let segmentedControl: UISegmentedControl
+    let helpButton: UIButton
+
+}
+
+class ReparentingTransitionManager: So8NSObjectC {
+    var isPresenting: Bool
+
+    func 00191394(){}
+}
+
+class LocationRecorder: So8NSObjectC {
+    var delegate: So24LocationRecorderDelegateC?
+    let manager: CLLocationManager
+    var locations: Swift.Array<LocationProto>
+    var startTime: Double
+    var lastHeading: CLHeading?
+    var isEnabled: Bool
+    var isRequestingLocationUpdates: Bool
+    var isRecording: Bool
+
+    func 00191768(){}
+    func 00192050(){}
+    func 00192278(){}
+}
+
+class ReleaseNotesBox: So6UIViewC {
+    var delegate: So23ReleaseNotesBoxDelegateC?
+    let containerView: UIView
+    let label: UILabel
+    let whatsNewButton: UIButton
+    let closeButton: UIButton
+
+}
+
+class FeedViewController: So16UIViewControllerC {
+    let service: ScaniverseService
+    let feed: FeedManager
+    let showPostedTip: Bool
+    let closeButton: FeedOverlayButton
+    let arButton: FeedOverlayButton
+    let shareButton: FeedOverlayButton
+    let moreButton: FeedOverlayButton
+    let prevButton: FeedOverlayButton
+    let nextButton: FeedOverlayButton
+    var collectionView: UICollectionView?
+    let busyOverlay: BusyOverlay
+    let shareTip: 0x02a1fa04
+    var dataSource: 0x0273f104
+    let userCache: UserCache
+    var isFirstAppearance: Bool
+    let startIndex: Int
+    var currentIndex: Int
+    var currentScanID: String?
+    var lastLoggedIndex: Int
+    var isBusy: Bool
+
+    func 00196954(){}
+    func 00196ef4(){}
+    func 0019731c(){}
+    func 00197714(){}
+    func 00197bdc(){}
+    func 00197f94(){}
+    func 001983a4(){}
+    func 00199ce0(){}
+    func 0019a54c(){}
+    func 0019a928(){}
+}
+
+class TrayButton: So8UIButtonC {
+    let circleView: UIView
+
+    func 0019d63c(){}
+}
+
+class ScanOptionsView: So6UIViewC {
+    var delegate: So23ScanOptionsViewDelegateC?
+    var activeControl: Control
+    var isLocationEnabled: Bool
+    let rangeButton: ScanOptionButton
+    let locationButton: ScanOptionButton
+    let rangeSelector: RangeSelector
+    let tipView: OverlayTipView
+
+    func 0019d960(){}
+    func 0019f488(){}
+    func 0019f4d4(){}
+    func 0019f67c(){}
+    func 0019f70c(){}
+    func 0019f858(){}
+}
+
+class LocationControl: So9UIControlC {
+    var locationName: String
+    var isOn: Bool
+    let icon: UIImageView
+    let label: UILabel
+    let addButton: UIButton
+    let removeButton: UIButton
+
+    func 001a0f30(){}
+}
+
+class MeasurementController {
+    var delegate: So29MeasurementControllerDelegateC?
+    var measurements: Swift.Array<Measurement>
+    var rulers: Rulers
+    var view: ScaniverseSceneView
+    var scene: ScaniverseScene
+    var tapRecognizer: UITapGestureRecognizer?
+    var doubleTapRecognizer: UITapGestureRecognizer?
+    var longPressRecognizer: UILongPressGestureRecognizer
+    var panRecognizer: UIPanGestureRecognizer
+    var lastPointAddedAt: Double
+    let alwaysAllowDelegate: AlwaysAllowGestureRecognizerDelegate
+
+    func 001a14ec(){}
+    func 001a15f4(){}
+    func 001a16fc(){}
+    func 001a1814(){}
+    func 001a18e0(){}
+    func 001a1a20(){}
+    func 001a1c40(){}
+}
+
+class AlwaysAllowGestureRecognizerDelegate: So8NSObjectC {
+
+}
+
+class ObjExporter {
+    let mesh: 0x02ad2205
+    let texture: MTLTexture
+    let adjustments: AdjustmentParamsProto
+    let location: LocationProto
+    let mode: String
+    let cancelQueue: OS_dispatch_queue
+    var _isCancelled: Bool
+    var positionData: 0x02dd1305
+    var texcoordData: 0x02dd1305
+    var indexData: 0x02dd1305
+    var textureData: 0x02dd1305
+    var stepsCompleted: Int
+    let totalSteps: Int
+
+    func 001a3830(){}
+    func 001a5c50(){}
+}
+
+class PointUniquifier {
+    var points: SaySo0CG
+    var pointToIndex: SDySo0CG
+    var indexMap: SaySo0CG
+
+    func 001a7eb0(){}
+}
+
+class AppInfo {
+    let isDebug: Bool
+    let isFromAppStore: Bool
+    let isSimulator: Bool
+    let version: String
+    let build: Int
+    let versionDescription: String
+    let appStoreReceipt: String
+    let deviceShort: String
+    let deviceInfo: String
+    let deviceName: String
+    let osVersion: String
+    let vendorID: String
+    let deviceClassName: String
+    let appName: String
+    let backend: String
+    let baseWebURL: String
+
+}
+
+class CropOverlayView: So6UIViewC {
+    var delegate: So23CropOverlayViewDelegateC?
+    let viewpointControl: UISegmentedControl
+    let cropShapeControl: UISegmentedControl
+    let resetCropButton: UIButton
+
+    func 001ac988(){}
+    func 001acacc(){}
+}
+
+class SiftTestViewController: So16UIViewControllerC {
+    let status: TestStatusManager
+    let headerView: UIView
+    let closeButton: UIButton
+    let runMatchButton: UIButton
+    let runOnceButton: UIButton
+    let runThreadsButton: UIButton
+    var testImages: Swift.Array<UIImage>?
+    let device: MTLDevice
+    var imageLoader: 0x023df504
+    let stopwatch: IteratorProtocol
+    var pendingThreads: Int
+
+    func 001ad1f0(){}
+    func 001ae178(){}
+    func 001aee80(){}
+    func 001af8d0(){}
+    func 001afc94(){}
+    func 001afda0(){}
+    func 001afeb0(){}
+    func 001b00dc(){}
+    func 001b08f8(){}
+    func 001b09bc(){}
+    func 001b0b98(){}
+}
+
+class EditorCropView: So6UIViewC {
+    var delegate: So22EditorCropViewDelegateC?
+    let headerView: PanelHeaderView
+    let slider: TickSlider
+
+    func 001b2b80(){}
+}
+
+class FeedManager {
+    var state: State
+    var listeners: Swift.Array<ListenerWrapper>
+    let streamID: String?
+    let service: ScaniverseService
+    let batchSize: Int
+    var scans: Swift.Dictionary<Swift.String, SharedScan>
+    var scanIDs: Array<String>
+    let throttle: ExponentialThrottle
+    var pageToken: String?
+    var generation: Int
+
+    func 001b379c(){}
+    func 001b3bbc(){}
+    func 001b3f90(){}
+    func 001b43b4(){}
+}
+
+class ScannerStrings {
+
+}
+
+class AccountFeaturesBox: So6UIViewC {
+
+}
+
+class VideoOptionPanel: So6UIViewC {
+    var delegate: So24VideoOptionPanelDelegateC?
+    let items: SaySo15VideoOptionItemC_pG
+    let itemSize: CGSize
+    let headerView: PanelHeaderView
+    var collectionView: UICollectionView?
+    var selectedIndex: Int
+
+    func 001b8488(){}
+    func 001b8754(){}
+    func 001b8b0c(){}
+}
+
+class VideoOptionCell: So20UICollectionViewCellC {
+    let container: UIView
+    let label: UILabel
+    let imageView: UIImageView
+    var item: So15VideoOptionItemC_pSg
+
+    func 001b9e1c(){}
+}
+
+class GestureManager: So8NSObjectC {
+    var cameraController: CameraController
+    var isEnabled: Bool
+    var view: weak UIView?
+    var panRecognizer: UIPanGestureRecognizer?
+    var pinchRecognizer: UIPinchGestureRecognizer?
+    var oneFingerDoubleTapRecognizer: UITapGestureRecognizer?
+    var twoFingerDoubleTapRecognizer: UITapGestureRecognizer?
+
+    func 001bb1f4(){}
+    func 001bb360(){}
+    func 001bb4cc(){}
+    func 001bb638(){}
+}
+
+class ShareButton: So8UIButtonC {
+
+}
+
+class VideoTipManager {
+    let view: OverlayTipView
+    var isPaused: Bool
+    var isRecording: Bool
+    var isTouchedWhileRecording: Bool
+
+    func 001bbf54(){}
+}
+
+class UIInfo {
+
+}
+
+class Rulers {
+    let rootNode: SCNNode
+    var pointNodePairs: Swift.Array<NodePair>
+    var edgeNodePairs: Swift.Array<NodePair>
+    var labelNodes: Swift.Array<SCNNode>
+    let opaqueRulerMat: SCNMaterial
+    let highlightRulerMat: SCNMaterial
+    let translucentRulerMat: SCNMaterial
+
+    func 001bd900(){}
+    func 001beca4(){}
+    func 001bf234(){}
+    func 001bf7d0(){}
+}
+
+class BusyOverlay: So6UIViewC {
+    let busyIndicator: UIActivityIndicatorView
+
+}
+
+class RangeSelector: So6UIViewC {
+    var delegate: So21RangeSelectorDelegateC?
+    var isActivated: Bool
+    var isLidar: Bool
+    let titleLabel: UILabel
+    let slider: TickSlider
+
+    func 001c0368(){}
+    func 001c0b84(){}
+}
+
+class RenameScanViewController: So16UIViewControllerC {
+    var delegate: So32RenameScanViewControllerDelegateC?
+    let scanID: String
+    let dimmerView: UIView
+    let dialogView: UIView
+    let contentView: UIView
+    let titleLabel: UILabel
+    let nameField: ScaniverseTextField
+    let cancelButton: MainButton
+    let saveButton: MainButton
+    let transitionManager: ModalTransitionManager
+
+    func 001c28d8(){}
+}
+
+class ComputeKernel {
+    let device: MTLDevice
+    let pipeline: MTLComputePipelineState
+    let canDispatchThreads: Bool
+
+}
+
+class UserInfoCell: So20UICollectionViewCellC {
+    var delegate: So20UserInfoCellDelegateC?
+    var user: User
+    var isSelf: Bool
+    let avatarView: UIImageView
+    let usernameLabel: UILabel
+    let shareButton: FeedOverlayButton
+    let moreButton: FeedOverlayButton
+
+    func 001c519c(){}
+}
+
+class ScanListCollectionView: So16UICollectionViewC {
+    var blockToRunAfterLayout: () -> ()?
+
+    func 001c613c(){}
+}
+
+class FilterOptionCell: So20UICollectionViewCellC {
+    let container: UIView
+    let label: UILabel
+    let imageView: UIImageView
+    let adjustmentIconView: UIImageView
+    var filter: FilterType
+    var icon: UIImage?
+
+    func 001c73b4(){}
+    func 001c7cd8(){}
+}
+
+struct UIBackgroundTaskIdentifier {
+    let rawValue: Int
+}
+
+struct simd_quatf {
+    var vector: 0x02ad3905
+}
+
+struct SCNVector3 {
+    var A: Float
+    var  empty-list : Float
+    var z: Float
+}
+
+struct UIEdgeInsets {
+    var top: 0x02fd2405
+    var left: 0x02fd2405
+    var bottom: 0x02fd2405
+    var right: 0x02fd2405
+}
+
+struct CGSize {
+    var width: 0x02fd2405
+    var height: 0x02fd2405
+}
+
+struct MTLSize {
+    var width: Int
+    var height: Int
+    var depth: Int
+}
+
+struct AVVideoCodecType {
+    var _rawValue: NSString
+}
+
+struct ASAuthorizationError {
+    let _nsError: NSError
+}
+
+struct Scope {
+    var _rawValue: NSString
+}
+
+struct SCNShaderModifierEntryPoint {
+    var _rawValue: NSString
+}
+
+struct ActivityType {
+    var _rawValue: NSString
+}
+
+struct LaunchOptionsKey {
+    var _rawValue: NSString
+}
+
+struct URLResourceKey {
+    var _rawValue: NSString
+}
+
+struct OpenExternalURLOptionsKey {
+    var _rawValue: NSString
+}
+
+struct TextureProcessorUniforms {
+    var exposure: Float
+    var contrast: Float
+    var sharpness: Float
+    var filter_intensity: Float
+}
+
+struct MKPointOfInterestCategory {
+    var _rawValue: NSString
+}
+
+struct SCNHitTestOption {
+    var _rawValue: NSString
+}
+
+struct SiftFeature {
+    var A: Float
+    var  empty-list : Float
+    var scale: Float
+    var orientation: Float
+    var quality: Float
+}
+
+struct Key {
+    var _rawValue: NSString
+}
+
+struct CGPoint {
+    var A: 0x02fd2405
+    var  empty-list : 0x02fd2405
+}
+
+struct CGRect {
+    var origin: CGPoint
+    var size: CGSize
+}
+
+struct CGAffineTransform {
+    var a: 0x02fd2405
+    var b: 0x02fd2405
+    var c: 0x02fd2405
+    var  variadic-marker : 0x02fd2405
+    var tx: 0x02fd2405
+    var ty: 0x02fd2405
+}
+
+struct simd_float2x2 {
+    var columns: 0x02f13505
+}
+
+struct AuthErrorCode {
+    let _nsError: NSError
+}
+
+struct StartUploadResponse {
+    var url: String?
+}
+
+struct Directory {
+    let directory: Swift.Dictionary<Swift.String, DirectoryEntry>
+}
+
+struct DirectoryEntry {
+    let id: String
+}
+
+struct Measurement {
+    let start: 0x021f3005
+    let end: 0x02a33405
+}
+
+struct TokenInfo {
+    var accessToken: String
+    var expiresAt: Double
+    var refreshToken: String?
+}
+
+struct Record {
+    let user: User
+    let insertedAt: Double
+}
+
+struct ScanURL {
+    let url: 0x028d1e05
+    let scanID: String
+}
+
+struct ProfileURL {
+    let url: 0x028d1e05
+    let username: String
+}
+
+struct AnchorUpdate {
+    let frame: Int
+    let transform: 0x02791c05
+}
+
+struct LatLngElevation {
+    let latitude: Double
+    let longitude: Double
+    let elevation: Float
+}
+
+struct PackedPointCloud {
+    let blockSize: Float
+    let origin: 0x021f3005
+    let pointCount: Int
+    let hasNormals: Bool
+    let blocks: Swift.Array<Block>
+}
+
+struct SketchfabProfile {
+    var uid: String
+    var username: String
+    var displayName: String?
+    var account: String?
+}
+
+struct User {
+    var userID: String
+    var createdAt: 0x027d0a05
+    var modifiedAt: 0x027d0a05
+    var username: String
+    var displayName: String
+    var bio: String
+    var numScans: Int
+    var numPublicScans: Int
+}
+
+struct SettingsItem {
+    let type: SettingType
+    let name: String
+    let details: String?
+    let icon: UIImage?
+    let url: 0x02351805
+    let helpText: String?
+    let setting: String?
+    let isDefaultOn: Bool
+}
+
+struct SettingsSection {
+    let name: String
+    var items: Swift.Array<SettingsItem>
+}
+
+struct ScanList {
+    let scans: Swift.Array<SharedScan>
+    let pageToken: String?
+}
+
+struct CheckUsernameResponse {
+    var usernames: Array<String>?
+}
+
+struct VertexUniforms {
+    let transform: simd_float2x2
+}
+
+struct NianticFrame {
+    let sequence: Int
+    let image: String
+    let timestamp: Double
+    let resolution: Array<Int>
+    let pose: Array<Float>
+    let pose4x4: Array<Float>
+    let originalPose: Array<Float>
+    let intrinsics: Array<Float>
+    let exposure: Float
+    let tracking: Int
+    let trackingReason: Int
+    let depth: String
+    let depthConfidence: String
+    let depthTimestamp: Double
+    let depthResolution: Array<Int>
+    let location: NianticLocation?
+}
+
+struct NianticCapture {
+    let formatVersion: String
+    let uuid: String
+    let timestamp: Double
+    let timezone: Int
+    let poi: String
+    let captureGroup: NianticCaptureGroup
+    let userData: NianticUserData
+    let app: String
+    let recorder: String
+    let platform: String
+    let model: String
+    let manufacturer: String
+    let hasUpdatedPoses: Bool
+    let duration: Double
+    let frameCount: Int
+    let framerate: Float
+    let autofocus: Int
+    let imageFormat: String
+    let imageQuality: Int
+    let resolution: Array<Int>
+    let coordinates: String
+    let depthFormat: String
+    let depthSource: String
+    let depthResolution: Array<Int>
+    let frames: Swift.Array<NianticFrame>
+}
+
+struct NianticLocation {
+    let positionSource: String
+    let positionTimestamp: Double
+    let positionAccuracy: Double
+    let latitude: Double
+    let longitude: Double
+    let altitude: Double
+    let altitudeAccuracy: Double
+    let headingTimestamp: Double
+    let heading: Double
+    let headingAccuracy: Double
+}
+
+struct NianticUserData {
+    let userEmail: String
+}
+
+struct NianticCaptureGroup {
+    let uuid: String
+    let sequence: Int
+}
+
+struct Tip {
+    let videoName: String
+    let text: String
+}
+
+struct CameraState {
+    let targetPosition: 0x021f3005
+    let targetOrientation: simd_quatf
+    let cameraDistance: Float
+}
+
+struct SharedScan {
+    var scanID: String
+    var createdAt: 0x027d0a05
+    var modifiedAt: 0x027d0a05
+    var userID: String
+    var visibility: String
+    var caption: String
+    var metadata: SharedScanMetadata
+    var location: SharedScanLocation?
+    var media: SharedScanMedia?
+}
+
+struct SharedScanMedia {
+    var mesh: String?
+    var tex: String?
+    var texlo: String?
+    var preview: String?
+    var thumbnail: String?
+}
+
+struct SharedScanMetadata {
+    var capturedAt: 0x027d0a05
+    var tzOffset: Int
+    var triangles: Int
+    var build: Int
+    var processBuild: Int?
+    var processMode: Int?
+    var points: Int?
+    var bound: Array<Float>?
+}
+
+struct SharedScanLocation {
+    var lat: Double
+    var lng: Double
+    var name: String
+}
+
+struct Payload {
+    let uuid: String
+    let content: 0x02991005
+    let md5: String
+}
+
+struct SettableValue {
+    let key: String
+    let name: String
+    let minValue: Float
+    let maxValue: Float
+    let isInteger: Bool
+}
+
+struct ClippingEllipse {
+    let center: 0x02d31005
+    let radius: 0x02d31005
+    let invRadius: 0x02d31005
+}
+
+struct ClippingPlane {
+    let type: PlaneType
+    let limit: Float
+}
+
+struct DepthRangeProto {
+    var near: Float
+    var far: Float
+    var unknownFields: 0x02f1fb04
+}
+
+struct ExposureInfoProto {
+    var shutter: Float
+    var offset: Float
+    var unknownFields: 0x02f1fb04
+}
+
+struct AffineTransformProto {
+    var rotation: Array<Float>
+    var translation: Array<Float>
+    var unknownFields: 0x02f1fb04
+}
+
+struct CameraParamsProto {
+    var width: 0x02931005
+    var height: 0x02931005
+    var f: Float
+    var px: Float
+    var py: Float
+    var k: Float
+    var unknownFields: 0x02f1fb04
+}
+
+struct DeprecatedCaptureInfoProto {
+    var gridSize: Float
+    var minWeight: Float
+    var pointCount: 0x02931005
+    var captureBuild: 0x02b32505
+    var device: String
+    var unknownFields: 0x02f1fb04
+    var _smallImageSize: RasterSizeProto?
+    var _largeImageSize: RasterSizeProto?
+    var _depthSize: RasterSizeProto?
+}
+
+struct RasterSizeProto {
+    var width: 0x02931005
+    var height: 0x02931005
+    var unknownFields: 0x02f1fb04
+}
+
+struct PlaceProto {
+    var names: Array<String>
+    var street: String
+    var neighborhood: String
+    var city: String
+    var state: String
+    var postalCode: String
+    var country: String
+    var countryCode: String
+    var unknownFields: 0x02f1fb04
+}
+
+struct ScanConfigurationProto {
+    var gridSize: Float
+    var maxUpdateFps: Float
+    var anchorInterval: 0x02931005
+    var largeImageInterval: 0x02931005
+    var minWeight: Float
+    var depthSource: 0x02931005
+    var unknownFields: 0x02f1fb04
+    var _smallImageSize: RasterSizeProto?
+    var _largeImageSize: RasterSizeProto?
+    var _depthSize: RasterSizeProto?
+}
+
+struct LocationProto {
+    var timestamp: Double
+    var latitude: Double
+    var longitude: Double
+    var accuracy: Float
+    var elevationMeters: Float
+    var elevationAccuracy: Float
+    var headingDegrees: Float
+    var headingAccuracy: Float
+    var unknownFields: 0x02f1fb04
+}
+
+struct AdjustmentParamsProto {
+    var rotationDegrees: Float
+    var cropShapeValue: 0x02931005
+    var filterType: 0x02931005
+    var filterIntensity: Float
+    var exposure: Float
+    var contrast: Float
+    var sharpness: Float
+    var unknownFields: 0x02f1fb04
+    var _cropBoundProto: 0x0117
+}
+
+struct BoundingBoxProto {
+    var loX: Float
+    var loY: Float
+    var loZ: Float
+    var hiX: Float
+    var hiY: Float
+    var hiZ: Float
+    var unknownFields: 0x02f1fb04
+}
+
+struct FrameProto {
+    var unknownFields: 0x02f1fb04
+    var _storage: IteratorProtocol
+}
+
+struct FramesProto {
+    var id: String
+    var frames: Swift.Array<FrameProto>
+    var anchors: Swift.Array<AffineTransformProto>
+    var locations: Swift.Array<LocationProto>
+    var unknownFields: 0x02f1fb04
+}
+
+struct ScanProto {
+    var unknownFields: 0x02f1fb04
+    var _storage: IteratorProtocol
+}
+
+struct FeatureFlagValues {
+    var minVersion: Int
+    var disableStats: Bool?
+    var noReviewPrompt: Bool?
+    var noticeID: Int?
+    var noticeTitle: String?
+    var noticeText: String?
+    var noticeCTA: String?
+    var noticeURL: String?
+}
+
+struct DirectoryEntry {
+    let url: 0x028d1e05
+    let size: Int
+    let isDirectory: Bool
+}
+
+struct TwoPointPose {
+    let camera: 0x021f3005
+    let target: 0x021f3005
+}
+
+struct CircularBuffer {
+    var buffer: Swift.Array<A>
+    var capacity: Int
+    var pos: Int
+}
+
+struct RecordedFrame {
+    let timestamp: Double
+    let state: CameraState
+}
+
+struct UploadedScan {
+    let id: String
+    let uploadedAt: Double
+    let uuids: Array<String>
+}
+
+struct UploadedScanList {
+    let scans: Swift.Array<UploadedScan>
+    let updatedAt: Double
+}
+
+struct Scan {
+    var scanProto: ScanProto
+    var framesProto: FramesProto
+}
+
+struct Item {
+    let id: String
+    let modifiedAt: Double
+}
+
+struct Item {
+    let type: DataType
+    let data: 0x02991005
+}
+
+struct SelectorSpec {
+    let setting: String
+    let options: Array<(String, Int)>
+}
+
+struct FileHeader {
+    let name: String
+    let offset: 0x02490705
+    let isCompressed: Bool
+    let size: 0x02490705
+    let compressedSize: 0x02490705
+    let datetime: 0x022b0705
+    let crc32: 0x02490705
+}
+
+struct GenericError {
+    let message: String
+}
+
+struct VariableLengthRecord {
+    let userID: String
+    let recordID: 0x02710505
+    let description: String
+    let payload: 0x02991005
+}
+
+struct Item {
+    let id: String
+    let modifiedAt: Double
+}
+
+struct ListenerWrapper {
+    var listener: So19FeedManagerListenerC?
+}
+
+struct NodePair {
+    let opaque: SCNNode
+    let translucent: SCNNode
+}
+
+enum UIDeviceOrientation {
+}
+
+enum UIInterfaceOrientation {
+}
+
+enum UIState {
+    case editing
+    case rendering
+    case sharing
+}
+
+enum Code {
+}
+
+enum Code {
+}
+
+enum DiscourageObjectModeReason {
+    case tooShort
+    case tooLong
+    case smallBaseline
+    case boundTooLarge
+}
+
+enum State {
+    case start
+    case converting
+    case requestingUrl
+    case uploading
+    case done
+    case cancelled
+    case failed
+}
+
+enum CodingKeys {
+    case url
+}
+
+enum ServerStatus {
+    case success
+    case badRequest
+    case unauthorized
+    case forbidden
+    case notFound
+    case conflict
+    case rateLimited
+    case serverError
+    case offline
+    case cancelled
+}
+
+enum ScanSizeHint {
+    case small
+    case medium
+    case large
+    case xlarge
+}
+
+enum Orientation {
+    case portrait
+    case landscape
+}
+
+enum CodingKeys {
+    case directory
+}
+
+enum CodingKeys {
+    case id
+}
+
+enum CodingKeys {
+    case accessToken
+    case expiresAt
+    case refreshToken
+}
+
+enum CroppingViewpoint {
+    case top
+    case front
+    case left
+    case right
+}
+
+enum AdjustmentType {
+    case crop
+    case filter
+    case exposure
+    case contrast
+    case sharpness
+}
+
+enum BackgroundType {
+    case darkGray
+    case lightGray
+    case black
+    case white
+    case sky
+    case midnight
+    case red
+    case orange
+    case yellow
+    case green
+    case blue
+}
+
+enum AspectRatio {
+    case ratio9_16
+    case ratio3_4
+    case ratio1_1
+    case ratio4_3
+    case ratio16_9
+}
+
+enum VideoMotionType {
+    case none
+    case orbit
+    case dropIn
+    case flyby
+    case elliptical
+    case journey
+    case recorded
+    case inOutAround
+    case spiral
+}
+
+enum VideoAdjustment {
+    case motion
+    case speed
+    case aspect
+    case background
+}
+
+enum Button {
+    case A
+    case B
+}
+
+enum ScanVisibility {
+    case unlisted
+    case public_
+}
+
+enum State {
+    case start
+    case exporting
+    case uploading
+    case readyToPost
+    case posting
+    case done
+    case cancelled
+    case failed
+}
+
+enum CodingKeys {
+    case uid
+    case username
+    case displayName
+    case account
+}
+
+enum CodingKeys {
+    case userID
+    case createdAt
+    case modifiedAt
+    case username
+    case displayName
+    case bio
+    case numScans
+    case numPublicScans
+}
+
+enum State {
+    case shown
+    case hidden
+}
+
+enum TipType {
+    case instructions
+    case paused
+    case slowDown
+    case turnSlowly
+}
+
+enum SettingType {
+    case link
+    case info
+    case toggle
+    case numeric
+    case selector
+    case feedback
+    case writeReview
+    case shareApp
+    case sendDiagnostics
+    case resetDebugOptions
+    case clearViewedNotices
+    case showReconTest
+    case showSiftTest
+    case showAuthTest
+    case signOutSketchfab
+    case signOutScaniverse
+    case openTwitter
+    case downloadScan
+    case viewTutorial
+    case showNianticUpload
+}
+
+enum FlagReason {
+    case porn
+    case hate
+    case violence
+    case drugweapon
+    case copyright
+    case selfharm
+    case personal
+    case other
+}
+
+enum CodingKeys {
+    case scans
+    case pageToken
+}
+
+enum CodingKeys {
+    case usernames
+}
+
+enum Provider {
+    case apple
+    case google
+}
+
+enum BusyState {
+    case idle
+    case exporting
+    case uploading
+    case done
+}
+
+enum ViewType {
+    case firstPerson
+    case thirdPerson
+    case overhead
+}
+
+enum Component {
+    case owner
+    case mesh
+    case textureLowRes
+    case textureHighRes
+}
+
+enum FooterType {
+    case empty
+    case loading
+    case noScansForUser
+    case noScansForSelf
+    case error
+}
+
+enum CodingKeys {
+    case sequence
+    case image
+    case timestamp
+    case resolution
+    case pose
+    case pose4x4
+    case originalPose
+    case intrinsics
+    case exposure
+    case tracking
+    case trackingReason
+    case depth
+    case depthConfidence
+    case depthTimestamp
+    case depthResolution
+    case location
+}
+
+enum CodingKeys {
+    case formatVersion
+    case uuid
+    case timestamp
+    case timezone
+    case poi
+    case captureGroup
+    case userData
+    case app
+    case recorder
+    case platform
+    case model
+    case manufacturer
+    case hasUpdatedPoses
+    case duration
+    case frameCount
+    case framerate
+    case autofocus
+    case imageFormat
+    case imageQuality
+    case resolution
+    case coordinates
+    case depthFormat
+    case depthSource
+    case depthResolution
+    case frames
+}
+
+enum CodingKeys {
+    case positionSource
+    case positionTimestamp
+    case positionAccuracy
+    case latitude
+    case longitude
+    case altitude
+    case altitudeAccuracy
+    case headingTimestamp
+    case heading
+    case headingAccuracy
+}
+
+enum CodingKeys {
+    case userEmail
+}
+
+enum CodingKeys {
+    case uuid
+    case sequence
+}
+
+enum CodingKeys {
+    case capturedAt
+    case tzOffset
+    case triangles
+    case build
+    case processBuild
+    case processMode
+    case points
+    case bound
+}
+
+enum CodingKeys {
+    case mesh
+    case tex
+    case texlo
+    case preview
+    case thumbnail
+}
+
+enum CodingKeys {
+    case scanID
+    case createdAt
+    case modifiedAt
+    case userID
+    case visibility
+    case caption
+    case metadata
+    case location
+    case media
+}
+
+enum CodingKeys {
+    case lat
+    case lng
+    case name
+}
+
+enum FieldType {
+    case general
+    case email
+    case password
+    case username
+}
+
+enum ExportFormat {
+    case dae
+    case fbx
+    case glb
+    case las
+    case mp4
+    case obj
+    case ply
+    case scan
+    case stl
+    case usdz
+    case raw
+}
+
+enum HelpContent {
+    case viewer
+    case processing
+    case sharing
+}
+
+enum BusyState {
+    case idle
+    case posting
+    case done
+}
+
+enum PlaneType {
+    case loX
+    case hiX
+    case loY
+    case hiY
+    case loZ
+    case hiZ
+}
+
+enum CodingKeys {
+    case minVersion
+    case disableStats
+    case noReviewPrompt
+    case noticeID
+    case noticeTitle
+    case noticeText
+    case noticeCTA
+    case noticeURL
+}
+
+enum FilterType {
+    case none
+    case warm
+    case cool
+    case bw
+    case analog
+    case crisp
+    case cinematic
+    case faded
+    case noir
+    case orangeteal
+    case vibrant
+    case vintage
+}
+
+enum CodingKeys {
+    case id
+    case uploadedAt
+    case uuids
+}
+
+enum CodingKeys {
+    case scans
+    case updatedAt
+}
+
+enum Section {
+    case user
+    case scans
+    case footer
+}
+
+enum DataType {
+    case string
+    case float16
+    case float
+    case uint8
+    case uint16
+    case int32
+}
+
+enum Step {
+    case loading
+    case selectMode
+    case processing
+    case confirm
+}
+
+enum ScanListDisplayType {
+    case table
+    case grid
+}
+
+enum Control {
+    case none
+    case range
+}
+
+enum CropShape {
+    case box
+    case cylinder
+}
+
+enum State {
+    case ready
+    case fetching
+    case complete
+    case error
+}
+
+enum ReconstructionMode {
+    case none
+    case fast
+    case area
+    case object
+}
+
+extension UIDeviceOrientation: Swift.RawRepresentable {
+    RawValue:Int
+}
+
+extension UIBackgroundTaskIdentifier: Swift.RawRepresentable {
+    RawValue:Int
+}
+
+extension UIBackgroundTaskIdentifier: Swift._ObjectiveCBridgeable {
+    _ObjectiveCType:NSNumber
+}
+
+extension Key: Swift.RawRepresentable {
+    RawValue:String
+}
+
+extension Key: Swift._ObjectiveCBridgeable {
+    _ObjectiveCType:NSString
+}
+
+extension SCNHitTestOption: Swift.RawRepresentable {
+    RawValue:String
+}
+
+extension SCNHitTestOption: Swift._ObjectiveCBridgeable {
+    _ObjectiveCType:NSString
+}
+
+extension MKPointOfInterestCategory: Swift.RawRepresentable {
+    RawValue:String
+}
+
+extension MKPointOfInterestCategory: Swift._ObjectiveCBridgeable {
+    _ObjectiveCType:NSString
+}
+
+extension OpenExternalURLOptionsKey: Swift.RawRepresentable {
+    RawValue:String
+}
+
+extension OpenExternalURLOptionsKey: Swift._ObjectiveCBridgeable {
+    _ObjectiveCType:NSString
+}
+
+extension Code: Swift.RawRepresentable {
+    RawValue:Int
+}
+
+extension URLResourceKey: Swift.RawRepresentable {
+    RawValue:String
+}
+
+extension URLResourceKey: Swift._ObjectiveCBridgeable {
+    _ObjectiveCType:NSString
+}
+
+extension LaunchOptionsKey: Swift.RawRepresentable {
+    RawValue:String
+}
+
+extension LaunchOptionsKey: Swift._ObjectiveCBridgeable {
+    _ObjectiveCType:NSString
+}
+
+extension ActivityType: Swift.RawRepresentable {
+    RawValue:String
+}
+
+extension ActivityType: Swift._ObjectiveCBridgeable {
+    _ObjectiveCType:NSString
+}
+
+extension SCNShaderModifierEntryPoint: Swift.RawRepresentable {
+    RawValue:String
+}
+
+extension SCNShaderModifierEntryPoint: Swift._ObjectiveCBridgeable {
+    _ObjectiveCType:NSString
+}
+
+extension Scope: Swift.RawRepresentable {
+    RawValue:String
+}
+
+extension Scope: Swift._ObjectiveCBridgeable {
+    _ObjectiveCType:NSString
+}
+
+extension AVVideoCodecType: Swift.RawRepresentable {
+    RawValue:String
+}
+
+extension AVVideoCodecType: Swift._ObjectiveCBridgeable {
+    _ObjectiveCType:NSString
+}
+
+extension ASAuthorizationError: Foundation._BridgedStoredNSError {
+    Code:Code
+}
+
+extension Code: Swift.RawRepresentable {
+    RawValue:Int
+}
+
+extension Code: Foundation._ErrorCodeProtocol {
+    _ErrorType:ASAuthorizationError
+}
+
+extension Code: Foundation._ErrorCodeProtocol {
+    _ErrorType:AuthErrorCode
+}
+
+extension AuthErrorCode: Foundation._BridgedStoredNSError {
+    Code:Code
+}
+
+extension Decodable: Swift.RawRepresentable {
+    RawValue:Int
+}
+
+extension CroppingViewpoint: Swift.RawRepresentable {
+    RawValue:Int
+}
+
+extension AspectRatio: Swift.RawRepresentable {
+    RawValue:String
+}
+
+extension ScanVisibility: Swift.RawRepresentable {
+    RawValue:String
+}
+
+extension FlagReason: Swift.RawRepresentable {
+    RawValue:String
+}
+
+extension ViewType: Swift.CaseIterable {
+    AllCases:Swift.Array<ViewType>
+}
+
+extension FooterType: Swift.RawRepresentable {
+    RawValue:String
+}
+
+extension ExportFormat: Swift.RawRepresentable {
+    RawValue:String
+}
+
+extension FilterType: Swift.RawRepresentable {
+    RawValue:0x02931005
+}
+
+extension Section: Swift.RawRepresentable {
+    RawValue:Int
+}
+
+extension DataType: Swift.RawRepresentable {
+    RawValue:0x02931005
+}
+
+extension ScanListDisplayType: Swift.RawRepresentable {
+    RawValue:Int
+}
+
+extension CropShape: Swift.RawRepresentable {
+    RawValue:0x02931005
+}
+
+extension ReconstructionMode: Swift.RawRepresentable {
+    RawValue:0x02931005
+}
+
+builtin MTLSize {
+	8
+	true
+	24
+	0
+}
+
+builtin CGSize {
+	8
+	true
+	16
+	0
+}
+
+builtin UIEdgeInsets {
+	8
+	true
+	32
+	0
+}
+
+builtin SCNVector3 {
+	4
+	true
+	12
+	0
+}
+
+builtin simd_quatf {
+	16
+	true
+	16
+	0
+}
+
+builtin UIInterfaceOrientation {
+	8
+	true
+	8
+	0
+}
+
+builtin UIDeviceOrientation {
+	8
+	true
+	8
+	0
+}
+
+builtin UIBackgroundTaskIdentifier {
+	8
+	true
+	8
+	0
+}
+
+builtin Key {
+	8
+	true
+	8
+	2147483647
+}
+
+builtin SCNHitTestOption {
+	8
+	true
+	8
+	2147483647
+}
+
+builtin MKPointOfInterestCategory {
+	8
+	true
+	8
+	2147483647
+}
+
+builtin TextureProcessorUniforms {
+	4
+	true
+	16
+	0
+}
+
+builtin OpenExternalURLOptionsKey {
+	8
+	true
+	8
+	2147483647
+}
+
+builtin Code {
+	8
+	true
+	8
+	0
+}
+
+builtin URLResourceKey {
+	8
+	true
+	8
+	2147483647
+}
+
+builtin LaunchOptionsKey {
+	8
+	true
+	8
+	2147483647
+}
+
+builtin ActivityType {
+	8
+	true
+	8
+	2147483647
+}
+
+builtin SCNShaderModifierEntryPoint {
+	8
+	true
+	8
+	2147483647
+}
+
+builtin Scope {
+	8
+	true
+	8
+	2147483647
+}
+
+builtin AVVideoCodecType {
+	8
+	true
+	8
+	2147483647
+}
+
+builtin Int {
+	4
+	true
+	20
+	0
+}
+
+builtin CGPoint {
+	8
+	true
+	16
+	0
+}
+
+builtin CGRect {
+	8
+	true
+	32
+	0
+}
+
+builtin CGAffineTransform {
+	8
+	true
+	48
+	0
+}
+
+builtin simd_float2x2 {
+	8
+	true
+	16
+	0
+}
+
+builtin Code {
+	8
+	true
+	8
+	0
+}
+
+block 002eba30 {
+	// captureTypeRecords
+	AnimationController
+	Double
+	// metadataSourceRecords
+}
+
+block 002eba44 {
+	// captureTypeRecords
+	@callee_guaranteed () -> ()
+	// metadataSourceRecords
+}
+
+block 002eba54 {
+	// captureTypeRecords
+	AnimationController
+	Float
+	// metadataSourceRecords
+}
+
+block 002eba68 {
+	// captureTypeRecords
+	@callee_guaranteed () -> ()
+	// metadataSourceRecords
+}
+
+block 002eba78 {
+	// captureTypeRecords
+	@callee_guaranteed () -> ()
+	// metadataSourceRecords
+}
+
+block 002eba88 {
+	// captureTypeRecords
+	@callee_guaranteed () -> ()
+	// metadataSourceRecords
+}
+
+block 002eba98 {
+	// captureTypeRecords
+	AnimationController
+	Float
+	// metadataSourceRecords
+}
+
+block 002ebaac {
+	// captureTypeRecords
+	@callee_guaranteed () -> ()
+	// metadataSourceRecords
+}
+
+block 002ebabc {
+	// captureTypeRecords
+	ExportFileManager
+	SaySo0CG
+	@escaping @callee_guaranteed () -> ()?
+	// metadataSourceRecords
+}
+
+block 002ebad4 {
+	// captureTypeRecords
+	String
+	// metadataSourceRecords
+}
+
+block 002ebae4 {
+	// captureTypeRecords
+	weak ShareVideoViewController?
+	// metadataSourceRecords
+}
+
+block 002ebaf4 {
+	// captureTypeRecords
+	RangeReplaceableCollection
+	// metadataSourceRecords
+}
+
+block 002ebb04 {
+	// captureTypeRecords
+	weak ShareVideoViewController?
+	// metadataSourceRecords
+}
+
+block 002ebb14 {
+	// captureTypeRecords
+	AnimationController
+	Float
+	// metadataSourceRecords
+}
+
+block 002ebb28 {
+	// captureTypeRecords
+	@callee_guaranteed () -> ()
+	// metadataSourceRecords
+}
+
+block 002ebb38 {
+	// captureTypeRecords
+	ShareVideoViewController
+	Float
+	RecordedAnimation
+	// metadataSourceRecords
+}
+
+block 002ebb50 {
+	// captureTypeRecords
+	RecordButton
+	CGAffineTransform
+	0x02fd2405
+	// metadataSourceRecords
+}
+
+block 002ebb68 {
+	// captureTypeRecords
+	RecordButton
+	CGAffineTransform
+	0x02fd2405
+	// metadataSourceRecords
+}
+
+block 002ebb80 {
+	// captureTypeRecords
+	AnimationController
+	Float
+	// metadataSourceRecords
+}
+
+block 002ebb94 {
+	// captureTypeRecords
+	@callee_guaranteed () -> ()
+	// metadataSourceRecords
+}
+
+block 002ebba4 {
+	// captureTypeRecords
+	AnimationController
+	Bool
+	// metadataSourceRecords
+}
+
+block 002ebbb8 {
+	// captureTypeRecords
+	@callee_guaranteed () -> ()
+	// metadataSourceRecords
+}
+
+block 002ebbc8 {
+	// captureTypeRecords
+	AnimationController
+	Bool
+	// metadataSourceRecords
+}
+
+block 002ebbdc {
+	// captureTypeRecords
+	@callee_guaranteed () -> ()
+	// metadataSourceRecords
+}
+
+block 002ebbec {
+	// captureTypeRecords
+	@callee_guaranteed () -> ()
+	// metadataSourceRecords
+}
+
+block 002ebbfc {
+	// captureTypeRecords
+	ShareVideoViewController
+	// metadataSourceRecords
+}
+
+block 002ebc0c {
+	// captureTypeRecords
+	ExportFileManager
+	SaySo0CG
+	@escaping @callee_guaranteed () -> ()?
+	// metadataSourceRecords
+}
+
+block 002ebc24 {
+	// captureTypeRecords
+	weak LoadScanViewController?
+	// metadataSourceRecords
+}
+
+block 002ebc34 {
+	// captureTypeRecords
+	UIViewController?
+	UIViewController
+	Bool
+	// metadataSourceRecords
+}
+
+block 002ebc4c {
+	// captureTypeRecords
+	EditorFilterView
+	// metadataSourceRecords
+}
+
+block 002ebc5c {
+	// captureTypeRecords
+	EditorFilterView
+	// metadataSourceRecords
+}
+
+block 002ebc6c {
+	// captureTypeRecords
+	FilterOptionCell
+	FilterType
+	// metadataSourceRecords
+}
+
+block 002ebc80 {
+	// captureTypeRecords
+	Decodable
+	FIRAuthCredential
+	AuthState
+	// metadataSourceRecords
+}
+
+block 002ebc98 {
+	// captureTypeRecords
+	FIRAuthCredential
+	AuthState
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ebcb0 {
+	// captureTypeRecords
+	Decodable
+	String
+	// metadataSourceRecords
+}
+
+block 002ebcc4 {
+	// captureTypeRecords
+	Decodable
+	String
+	// metadataSourceRecords
+}
+
+block 002ebcd8 {
+	// captureTypeRecords
+	OverlayTipView
+	Int
+	NSAttributedString
+	// metadataSourceRecords
+}
+
+block 002ebcf0 {
+	// captureTypeRecords
+	OverlayTipView
+	Int
+	String
+	// metadataSourceRecords
+}
+
+block 002ebd08 {
+	// captureTypeRecords
+	OverlayTipView
+	Int
+	// metadataSourceRecords
+}
+
+block 002ebd1c {
+	// captureTypeRecords
+	DownloadScanViewController
+	String
+	0x028d1e05
+	// metadataSourceRecords
+}
+
+block 002ebd34 {
+	// captureTypeRecords
+	UIView
+	CGAffineTransform
+	// metadataSourceRecords
+}
+
+block 002ebd48 {
+	// captureTypeRecords
+	NianticUploader
+	Payload
+	// metadataSourceRecords
+}
+
+block 002ebd5c {
+	// captureTypeRecords
+	PointCloudExporter
+	ExportFormat
+	0x028d1e05
+	@escaping @callee_guaranteed (@unowned Swift.Bool) -> ()
+	// metadataSourceRecords
+}
+
+block 002ebd78 {
+	// captureTypeRecords
+	PointCloudExporter
+	@escaping @callee_guaranteed (@unowned Swift.Bool) -> ()
+	Bool
+	// metadataSourceRecords
+}
+
+block 002ebd90 {
+	// captureTypeRecords
+	ScannerViewController
+	// metadataSourceRecords
+}
+
+block 002ebda0 {
+	// captureTypeRecords
+	RecordButton
+	CGAffineTransform
+	0x02fd2405
+	// metadataSourceRecords
+}
+
+block 002ebdb8 {
+	// captureTypeRecords
+	RecordButton
+	CGAffineTransform
+	0x02fd2405
+	// metadataSourceRecords
+}
+
+block 002ebdd0 {
+	// captureTypeRecords
+	RecordButton
+	CGAffineTransform
+	0x02fd2405
+	// metadataSourceRecords
+}
+
+block 002ebde8 {
+	// captureTypeRecords
+	RecordButton
+	CGAffineTransform
+	0x02fd2405
+	// metadataSourceRecords
+}
+
+block 002ebe00 {
+	// captureTypeRecords
+	ScannerViewController
+	// metadataSourceRecords
+}
+
+block 002ebe10 {
+	// captureTypeRecords
+	ScannerViewController
+	// metadataSourceRecords
+}
+
+block 002ebe20 {
+	// captureTypeRecords
+	@callee_guaranteed () -> ()
+	// metadataSourceRecords
+}
+
+block 002ebe30 {
+	// captureTypeRecords
+	ScannerViewController
+	// metadataSourceRecords
+}
+
+block 002ebe40 {
+	// captureTypeRecords
+	ScannerViewController
+	// metadataSourceRecords
+}
+
+block 002ebe50 {
+	// captureTypeRecords
+	@callee_guaranteed () -> ()
+	// metadataSourceRecords
+}
+
+block 002ebe60 {
+	// captureTypeRecords
+	ScannerViewController
+	ARFrame
+	// metadataSourceRecords
+}
+
+block 002ebe74 {
+	// captureTypeRecords
+	ScannerViewController
+	// metadataSourceRecords
+}
+
+block 002ebe84 {
+	// captureTypeRecords
+	ScannerViewController
+	// metadataSourceRecords
+}
+
+block 002ebe94 {
+	// captureTypeRecords
+	ScannerViewController
+	// metadataSourceRecords
+}
+
+block 002ebea4 {
+	// captureTypeRecords
+	Bool
+	ScannerViewController
+	// metadataSourceRecords
+}
+
+block 002ebeb8 {
+	// captureTypeRecords
+	Int
+	// metadataSourceRecords
+}
+
+block 002ebec8 {
+	// captureTypeRecords
+	weak SignInViewController?
+	// metadataSourceRecords
+}
+
+block 002ebed8 {
+	// captureTypeRecords
+	weak SignInViewController?
+	// metadataSourceRecords
+}
+
+block 002ebee8 {
+	// captureTypeRecords
+	weak SignInViewController?
+	// metadataSourceRecords
+}
+
+block 002ebef8 {
+	// captureTypeRecords
+	ScaniverseScene
+	0x02dd1305
+	0x02ad2205
+	AdjustmentParamsProto
+	@escaping @callee_guaranteed () -> ()
+	// metadataSourceRecords
+}
+
+block 002ebf18 {
+	// captureTypeRecords
+	ScaniverseScene
+	SCNGeometry
+	AdjustmentParamsProto
+	@escaping @callee_guaranteed () -> ()
+	// metadataSourceRecords
+}
+
+block 002ebf34 {
+	// captureTypeRecords
+	ScanDownloader
+	String
+	SSSgSo0C
+	// metadataSourceRecords
+}
+
+block 002ebf4c {
+	// captureTypeRecords
+	ScanDownloader
+	String
+	SSSgSo0C
+	// metadataSourceRecords
+}
+
+block 002ebf64 {
+	// captureTypeRecords
+	ScanDownloader
+	String
+	0x02dd1305
+	NSURLResponse?
+	0x02f92d05
+	SSSgSo0C
+	// metadataSourceRecords
+}
+
+block 002ebf88 {
+	// captureTypeRecords
+	@escaping @callee_guaranteed (@unowned Swift.Bool) -> ()
+	ScanDownloader
+	// metadataSourceRecords
+}
+
+block 002ebf9c {
+	// captureTypeRecords
+	Decodable
+	0x02dd1305
+	@escaping @callee_guaranteed (@unowned Swift.Bool) -> ()
+	ScanDownloader
+	// metadataSourceRecords
+}
+
+block 002ebfb8 {
+	// captureTypeRecords
+	ScanDownloader
+	String
+	SSSgSo0C
+	// metadataSourceRecords
+}
+
+block 002ebfd0 {
+	// captureTypeRecords
+	ScanDownloader
+	String
+	SSSgSo0C
+	// metadataSourceRecords
+}
+
+block 002ebfe8 {
+	// captureTypeRecords
+	DownloadScanViewController
+	// metadataSourceRecords
+}
+
+block 002ebff8 {
+	// captureTypeRecords
+	ScanDownloader
+	String
+	SSSgSo0C
+	// metadataSourceRecords
+}
+
+block 002ec010 {
+	// captureTypeRecords
+	ScanDownloader
+	String
+	SSSgSo0C
+	// metadataSourceRecords
+}
+
+block 002ec028 {
+	// captureTypeRecords
+	String
+	ScanListViewController
+	// metadataSourceRecords
+}
+
+block 002ec03c {
+	// captureTypeRecords
+	String
+	ScanListViewController
+	// metadataSourceRecords
+}
+
+block 002ec050 {
+	// captureTypeRecords
+	ScanListViewController
+	// metadataSourceRecords
+}
+
+block 002ec060 {
+	// captureTypeRecords
+	ScanListViewController
+	// metadataSourceRecords
+}
+
+block 002ec070 {
+	// captureTypeRecords
+	ScanListCell
+	// metadataSourceRecords
+}
+
+block 002ec080 {
+	// captureTypeRecords
+	ScanListCell
+	// metadataSourceRecords
+}
+
+block 002ec090 {
+	// captureTypeRecords
+	weak ScanListViewController?
+	// metadataSourceRecords
+}
+
+block 002ec0a0 {
+	// captureTypeRecords
+	0x02572705
+	// metadataSourceRecords
+}
+
+block 002ec0b0 {
+	// captureTypeRecords
+	ScanListCell
+	// metadataSourceRecords
+}
+
+block 002ec0c0 {
+	// captureTypeRecords
+	RangeReplaceableCollection
+	// metadataSourceRecords
+}
+
+block 002ec0d0 {
+	// captureTypeRecords
+	Array<Substring>
+	// metadataSourceRecords
+}
+
+block 002ec0e0 {
+	// captureTypeRecords
+	0x02a92305
+	// metadataSourceRecords
+}
+
+block 002ec0f0 {
+	// captureTypeRecords
+	ReconTestRunner
+	Float
+	// metadataSourceRecords
+}
+
+block 002ec104 {
+	// captureTypeRecords
+	ReconTestRunner
+	Bool
+	// metadataSourceRecords
+}
+
+block 002ec118 {
+	// captureTypeRecords
+	ReconTestRunner
+	String
+	// metadataSourceRecords
+}
+
+block 002ec12c {
+	// captureTypeRecords
+	ReconTestRunner
+	Float
+	// metadataSourceRecords
+}
+
+block 002ec140 {
+	// captureTypeRecords
+	ReconTestRunner
+	String
+	// metadataSourceRecords
+}
+
+block 002ec154 {
+	// captureTypeRecords
+	EditorViewController
+	SCNCamera
+	ScaniverseSceneView
+	// metadataSourceRecords
+}
+
+block 002ec16c {
+	// captureTypeRecords
+	EditorViewController
+	// metadataSourceRecords
+}
+
+block 002ec17c {
+	// captureTypeRecords
+	EditorViewController
+	// metadataSourceRecords
+}
+
+block 002ec18c {
+	// captureTypeRecords
+	EditorViewController
+	// metadataSourceRecords
+}
+
+block 002ec19c {
+	// captureTypeRecords
+	RangeReplaceableCollection
+	// metadataSourceRecords
+}
+
+block 002ec1ac {
+	// captureTypeRecords
+	UploadScanViewController
+	// metadataSourceRecords
+}
+
+block 002ec1bc {
+	// captureTypeRecords
+	UIView
+	CGAffineTransform
+	// metadataSourceRecords
+}
+
+block 002ec1d0 {
+	// captureTypeRecords
+	FilterPreviewRenderer
+	FilterType
+	CGImage
+	// metadataSourceRecords
+}
+
+block 002ec1e8 {
+	// captureTypeRecords
+	CGImage
+	CGImage
+	// metadataSourceRecords
+}
+
+block 002ec1fc {
+	// captureTypeRecords
+	FilterPreviewRenderer
+	CGImage
+	// metadataSourceRecords
+}
+
+block 002ec210 {
+	// captureTypeRecords
+	SettingsViewController
+	// metadataSourceRecords
+}
+
+block 002ec220 {
+	// captureTypeRecords
+	SettingsViewController
+	// metadataSourceRecords
+}
+
+block 002ec230 {
+	// captureTypeRecords
+	AutoProgress
+	// metadataSourceRecords
+}
+
+block 002ec240 {
+	// captureTypeRecords
+	UIView
+	CGAffineTransform
+	// metadataSourceRecords
+}
+
+block 002ec254 {
+	// captureTypeRecords
+	SetVisibilityViewController
+	// metadataSourceRecords
+}
+
+block 002ec264 {
+	// captureTypeRecords
+	weak SetVisibilityViewController?
+	// metadataSourceRecords
+}
+
+block 002ec274 {
+	// captureTypeRecords
+	SetVisibilityViewController
+	// metadataSourceRecords
+}
+
+block 002ec284 {
+	// captureTypeRecords
+	ScanPoster
+	SharedScan
+	// metadataSourceRecords
+}
+
+block 002ec298 {
+	// captureTypeRecords
+	weak ScanPoster?
+	// metadataSourceRecords
+}
+
+block 002ec2a8 {
+	// captureTypeRecords
+	ScanPoster
+	String
+	Dictionary<String, String>
+	0x02991005
+	// metadataSourceRecords
+}
+
+block 002ec2c4 {
+	// captureTypeRecords
+	weak ScanPoster?
+	// metadataSourceRecords
+}
+
+block 002ec2d4 {
+	// captureTypeRecords
+	weak ScanPoster?
+	// metadataSourceRecords
+}
+
+block 002ec2e4 {
+	// captureTypeRecords
+	0x028d1e05
+	{ var weak ScanPoster }?
+	NSProgress
+	// metadataSourceRecords
+}
+
+block 002ec2fc {
+	// captureTypeRecords
+	weak SketchfabClient?
+	// metadataSourceRecords
+}
+
+block 002ec30c {
+	// captureTypeRecords
+	{ var weak SketchfabClient }?
+	IteratorProtocol
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ec324 {
+	// captureTypeRecords
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ec334 {
+	// captureTypeRecords
+	Decodable
+	Decodable
+	String?
+	// metadataSourceRecords
+}
+
+block 002ec34c {
+	// captureTypeRecords
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ec35c {
+	// captureTypeRecords
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ec36c {
+	// captureTypeRecords
+	@escaping @callee_guaranteed (@unowned Swift.Bool) -> ()
+	// metadataSourceRecords
+}
+
+block 002ec37c {
+	// captureTypeRecords
+	@escaping @callee_guaranteed (@unowned Swift.Bool) -> ()
+	// metadataSourceRecords
+}
+
+block 002ec38c {
+	// captureTypeRecords
+	UIView
+	CGAffineTransform
+	// metadataSourceRecords
+}
+
+block 002ec3a0 {
+	// captureTypeRecords
+	MainButton
+	// metadataSourceRecords
+}
+
+block 002ec3b0 {
+	// captureTypeRecords
+	UsernameViewController
+	// metadataSourceRecords
+}
+
+block 002ec3c0 {
+	// captureTypeRecords
+	UsernameViewController
+	String
+	// metadataSourceRecords
+}
+
+block 002ec3d4 {
+	// captureTypeRecords
+	AuthState
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ec3e8 {
+	// captureTypeRecords
+	UsernameViewController
+	String
+	// metadataSourceRecords
+}
+
+block 002ec3fc {
+	// captureTypeRecords
+	AuthState
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ec410 {
+	// captureTypeRecords
+	DateOverlayView
+	// metadataSourceRecords
+}
+
+block 002ec420 {
+	// captureTypeRecords
+	DateOverlayView
+	// metadataSourceRecords
+}
+
+block 002ec430 {
+	// captureTypeRecords
+	@escaping @callee_guaranteed () -> ()?
+	// metadataSourceRecords
+}
+
+block 002ec440 {
+	// captureTypeRecords
+	weak ScanListCell?
+	// metadataSourceRecords
+}
+
+block 002ec450 {
+	// captureTypeRecords
+	weak ScanListCell?
+	// metadataSourceRecords
+}
+
+block 002ec460 {
+	// captureTypeRecords
+	weak ScanListCell?
+	// metadataSourceRecords
+}
+
+block 002ec470 {
+	// captureTypeRecords
+	UIView
+	CGAffineTransform
+	// metadataSourceRecords
+}
+
+block 002ec484 {
+	// captureTypeRecords
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ec494 {
+	// captureTypeRecords
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ec4a4 {
+	// captureTypeRecords
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ec4b4 {
+	// captureTypeRecords
+	IteratorProtocol
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ec4c8 {
+	// captureTypeRecords
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ec4d8 {
+	// captureTypeRecords
+	IteratorProtocol
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ec4ec {
+	// captureTypeRecords
+	Decodable
+	String
+	0x02dd1305
+	// metadataSourceRecords
+}
+
+block 002ec504 {
+	// captureTypeRecords
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ec514 {
+	// captureTypeRecords
+	Decodable
+	String
+	0x02dd1305
+	// metadataSourceRecords
+}
+
+block 002ec52c {
+	// captureTypeRecords
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ec53c {
+	// captureTypeRecords
+	Decodable
+	String
+	0x02dd1305
+	// metadataSourceRecords
+}
+
+block 002ec554 {
+	// captureTypeRecords
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ec564 {
+	// captureTypeRecords
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ec574 {
+	// captureTypeRecords
+	IteratorProtocol
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ec588 {
+	// captureTypeRecords
+	Decodable
+	String
+	// metadataSourceRecords
+}
+
+block 002ec59c {
+	// captureTypeRecords
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ec5ac {
+	// captureTypeRecords
+	Decodable
+	String
+	0x02991005
+	// metadataSourceRecords
+}
+
+block 002ec5c4 {
+	// captureTypeRecords
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ec5d4 {
+	// captureTypeRecords
+	Decodable
+	String
+	0x02dd1305
+	// metadataSourceRecords
+}
+
+block 002ec5ec {
+	// captureTypeRecords
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ec5fc {
+	// captureTypeRecords
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ec60c {
+	// captureTypeRecords
+	IteratorProtocol
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ec620 {
+	// captureTypeRecords
+	Decodable
+	String
+	// metadataSourceRecords
+}
+
+block 002ec634 {
+	// captureTypeRecords
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ec644 {
+	// captureTypeRecords
+	Decodable
+	String
+	// metadataSourceRecords
+}
+
+block 002ec658 {
+	// captureTypeRecords
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ec668 {
+	// captureTypeRecords
+	Decodable
+	String
+	// metadataSourceRecords
+}
+
+block 002ec67c {
+	// captureTypeRecords
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ec68c {
+	// captureTypeRecords
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ec69c {
+	// captureTypeRecords
+	IteratorProtocol
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ec6b0 {
+	// captureTypeRecords
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ec6c0 {
+	// captureTypeRecords
+	IteratorProtocol
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ec6d4 {
+	// captureTypeRecords
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ec6e4 {
+	// captureTypeRecords
+	IteratorProtocol
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ec6f8 {
+	// captureTypeRecords
+	UIView
+	CGAffineTransform
+	// metadataSourceRecords
+}
+
+block 002ec70c {
+	// captureTypeRecords
+	weak PostToSketchfabViewController?
+	// metadataSourceRecords
+}
+
+block 002ec71c {
+	// captureTypeRecords
+	Bool
+	PostToSketchfabViewController
+	// metadataSourceRecords
+}
+
+block 002ec730 {
+	// captureTypeRecords
+	PostToSketchfabViewController
+	// metadataSourceRecords
+}
+
+block 002ec740 {
+	// captureTypeRecords
+	PostToSketchfabViewController
+	0x028d1e05
+	// metadataSourceRecords
+}
+
+block 002ec754 {
+	// captureTypeRecords
+	PostToSketchfabViewController
+	// metadataSourceRecords
+}
+
+block 002ec764 {
+	// captureTypeRecords
+	PostToSketchfabViewController
+	// metadataSourceRecords
+}
+
+block 002ec774 {
+	// captureTypeRecords
+	weak SketchfabClient?
+	// metadataSourceRecords
+}
+
+block 002ec784 {
+	// captureTypeRecords
+	{ var weak SketchfabClient }?
+	@escaping @callee_guaranteed (@unowned Swift.Bool) -> ()
+	// metadataSourceRecords
+}
+
+block 002ec798 {
+	// captureTypeRecords
+	DepthComputer
+	ARFrame
+	UIDeviceOrientation
+	So0CSgIegg_
+	// metadataSourceRecords
+}
+
+block 002ec7b4 {
+	// captureTypeRecords
+	So0CSgIegg_
+	So0CSg
+	// metadataSourceRecords
+}
+
+block 002ec7c8 {
+	// captureTypeRecords
+	ShareViewController
+	// metadataSourceRecords
+}
+
+block 002ec7d8 {
+	// captureTypeRecords
+	ShareViewController
+	// metadataSourceRecords
+}
+
+block 002ec7e8 {
+	// captureTypeRecords
+	weak ShareViewController?
+	// metadataSourceRecords
+}
+
+block 002ec7f8 {
+	// captureTypeRecords
+	{ var weak ShareViewController }?
+	0x028d1e05
+	// metadataSourceRecords
+}
+
+block 002ec80c {
+	// captureTypeRecords
+	SharedScan
+	UIViewController
+	// metadataSourceRecords
+}
+
+block 002ec820 {
+	// captureTypeRecords
+	ShutterControl
+	NSNotification
+	// metadataSourceRecords
+}
+
+block 002ec834 {
+	// captureTypeRecords
+	AnimationController
+	Float
+	// metadataSourceRecords
+}
+
+block 002ec848 {
+	// captureTypeRecords
+	@callee_guaranteed () -> ()
+	// metadataSourceRecords
+}
+
+block 002ec858 {
+	// captureTypeRecords
+	@callee_guaranteed () -> ()
+	// metadataSourceRecords
+}
+
+block 002ec868 {
+	// captureTypeRecords
+	AnimationController
+	ScaniverseAnimation
+	// metadataSourceRecords
+}
+
+block 002ec87c {
+	// captureTypeRecords
+	@callee_guaranteed () -> ()
+	// metadataSourceRecords
+}
+
+block 002ec88c {
+	// captureTypeRecords
+	Int
+	// metadataSourceRecords
+}
+
+block 002ec89c {
+	// captureTypeRecords
+	Int
+	0x028d1e05
+	// metadataSourceRecords
+}
+
+block 002ec8b0 {
+	// captureTypeRecords
+	Decodable
+	String
+	// metadataSourceRecords
+}
+
+block 002ec8c4 {
+	// captureTypeRecords
+	ExportFileManager
+	SaySo0CG
+	@escaping @callee_guaranteed () -> ()?
+	// metadataSourceRecords
+}
+
+block 002ec8dc {
+	// captureTypeRecords
+	PopupView
+	// metadataSourceRecords
+}
+
+block 002ec8ec {
+	// captureTypeRecords
+	PopupView
+	// metadataSourceRecords
+}
+
+block 002ec8fc {
+	// captureTypeRecords
+	NSURLSessionTask?
+	// metadataSourceRecords
+}
+
+block 002ec90c {
+	// captureTypeRecords
+	ScanLoader
+	{ var NSURLSessionTask }?
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ec924 {
+	// captureTypeRecords
+	ExportViewController
+	0x02fd2405
+	// metadataSourceRecords
+}
+
+block 002ec938 {
+	// captureTypeRecords
+	ExportViewController
+	// metadataSourceRecords
+}
+
+block 002ec948 {
+	// captureTypeRecords
+	weak ExportViewController?
+	// metadataSourceRecords
+}
+
+block 002ec958 {
+	// captureTypeRecords
+	{ var weak ExportViewController }?
+	0x028d1e05
+	ExportFormat
+	// metadataSourceRecords
+}
+
+block 002ec970 {
+	// captureTypeRecords
+	weak ExportViewController?
+	// metadataSourceRecords
+}
+
+block 002ec980 {
+	// captureTypeRecords
+	IteratorProtocol
+	ExportFormat
+	{ var weak ExportViewController }?
+	0x028d1e05
+	ExportFormatButton
+	// metadataSourceRecords
+}
+
+block 002ec9a0 {
+	// captureTypeRecords
+	LoggerImpl
+	0x027d0a05
+	String
+	String
+	String
+	String?
+	// metadataSourceRecords
+}
+
+block 002ec9c4 {
+	// captureTypeRecords
+	RawDataExporter
+	ExportFormat
+	0x028d1e05
+	@escaping @callee_guaranteed (@unowned Swift.Bool) -> ()
+	// metadataSourceRecords
+}
+
+block 002ec9e0 {
+	// captureTypeRecords
+	RawDataExporter
+	@escaping @callee_guaranteed (@unowned Swift.Bool) -> ()
+	Bool
+	// metadataSourceRecords
+}
+
+block 002ec9f8 {
+	// captureTypeRecords
+	RecordButton
+	CGAffineTransform
+	0x02fd2405
+	// metadataSourceRecords
+}
+
+block 002eca10 {
+	// captureTypeRecords
+	RecordButton
+	// metadataSourceRecords
+}
+
+block 002eca20 {
+	// captureTypeRecords
+	UIViewController
+	UIViewController
+	// metadataSourceRecords
+}
+
+block 002eca34 {
+	// captureTypeRecords
+	MainTabController
+	// metadataSourceRecords
+}
+
+block 002eca44 {
+	// captureTypeRecords
+	Scan
+	String
+	Swift.Array<LocationProto>
+	LocationRecorder
+	// metadataSourceRecords
+}
+
+block 002eca60 {
+	// captureTypeRecords
+	0x02651605
+	// metadataSourceRecords
+}
+
+block 002eca70 {
+	// captureTypeRecords
+	NianticPayloadBuilder
+	@escaping @callee_guaranteed (@in_guaranteed Payload) -> ()
+	// metadataSourceRecords
+}
+
+block 002eca84 {
+	// captureTypeRecords
+	NianticPayloadBuilder
+	Payload?
+	@escaping @callee_guaranteed (@in_guaranteed Payload) -> ()
+	// metadataSourceRecords
+}
+
+block 002eca9c {
+	// captureTypeRecords
+	weak SystemShareViewController?
+	// metadataSourceRecords
+}
+
+block 002ecaac {
+	// captureTypeRecords
+	{ var weak SystemShareViewController }?
+	0x028d1e05
+	// metadataSourceRecords
+}
+
+block 002ecac0 {
+	// captureTypeRecords
+	UIView
+	CGAffineTransform
+	// metadataSourceRecords
+}
+
+block 002ecad4 {
+	// captureTypeRecords
+	String
+	ViewScanViewController
+	IteratorProtocol
+	// metadataSourceRecords
+}
+
+block 002ecaec {
+	// captureTypeRecords
+	ViewScanViewController
+	0x02ad2205
+	0x02991005
+	// metadataSourceRecords
+}
+
+block 002ecb04 {
+	// captureTypeRecords
+	weak ViewScanViewController?
+	// metadataSourceRecords
+}
+
+block 002ecb14 {
+	// captureTypeRecords
+	IteratorProtocol
+	0x02ad2205
+	{ var weak ViewScanViewController }?
+	0x02991005
+	// metadataSourceRecords
+}
+
+block 002ecb30 {
+	// captureTypeRecords
+	ExportFileManager
+	SaySo0CG
+	@escaping @callee_guaranteed () -> ()?
+	// metadataSourceRecords
+}
+
+block 002ecb48 {
+	// captureTypeRecords
+	UIView
+	CGAffineTransform
+	// metadataSourceRecords
+}
+
+block 002ecb5c {
+	// captureTypeRecords
+	weak SocialViewController?
+	// metadataSourceRecords
+}
+
+block 002ecb6c {
+	// captureTypeRecords
+	FeedManager
+	Int
+	State
+	// metadataSourceRecords
+}
+
+block 002ecb84 {
+	// captureTypeRecords
+	MeasurementViewController
+	// metadataSourceRecords
+}
+
+block 002ecb94 {
+	// captureTypeRecords
+	MeasurementViewController
+	// metadataSourceRecords
+}
+
+block 002ecba4 {
+	// captureTypeRecords
+	MeasurementViewController
+	// metadataSourceRecords
+}
+
+block 002ecbb4 {
+	// captureTypeRecords
+	MeasurementViewController
+	// metadataSourceRecords
+}
+
+block 002ecbc4 {
+	// captureTypeRecords
+	StatsService
+	Swift.Array<Stats>
+	// metadataSourceRecords
+}
+
+block 002ecbd8 {
+	// captureTypeRecords
+	StatsService
+	String
+	Dictionary<String, Any>
+	// metadataSourceRecords
+}
+
+block 002ecbf0 {
+	// captureTypeRecords
+	UIView
+	CGAffineTransform
+	// metadataSourceRecords
+}
+
+block 002ecc04 {
+	// captureTypeRecords
+	ReportScanViewController
+	// metadataSourceRecords
+}
+
+block 002ecc14 {
+	// captureTypeRecords
+	ReportScanViewController
+	// metadataSourceRecords
+}
+
+block 002ecc24 {
+	// captureTypeRecords
+	ReportScanViewController
+	ReasonButton
+	// metadataSourceRecords
+}
+
+block 002ecc38 {
+	// captureTypeRecords
+	ReportScanViewController
+	// metadataSourceRecords
+}
+
+block 002ecc48 {
+	// captureTypeRecords
+	weak ReportScanViewController?
+	// metadataSourceRecords
+}
+
+block 002ecc58 {
+	// captureTypeRecords
+	{ var weak ReportScanViewController }?
+	FlagReason
+	// metadataSourceRecords
+}
+
+block 002ecc6c {
+	// captureTypeRecords
+	ReportScanViewController
+	// metadataSourceRecords
+}
+
+block 002ecc7c {
+	// captureTypeRecords
+	UIViewControllerContextTransitioning
+	// metadataSourceRecords
+}
+
+block 002ecc8c {
+	// captureTypeRecords
+	UIViewControllerContextTransitioning
+	// metadataSourceRecords
+}
+
+block 002ecc9c {
+	// captureTypeRecords
+	weak LoadProfileViewController?
+	// metadataSourceRecords
+}
+
+block 002eccac {
+	// captureTypeRecords
+	UIViewController?
+	UIViewController
+	Bool
+	// metadataSourceRecords
+}
+
+block 002eccc4 {
+	// captureTypeRecords
+	0x02991005
+	0x02991005
+	0x02991005
+	0x02991005
+	0x02991005
+	0x02991005
+	0x02991005
+	0x028d1e05
+	@escaping @callee_guaranteed (@unowned Swift.Bool) -> ()
+	// metadataSourceRecords
+}
+
+block 002eccf4 {
+	// captureTypeRecords
+	@escaping @callee_guaranteed (@unowned Swift.Bool) -> ()
+	Bool
+	// metadataSourceRecords
+}
+
+block 002ecd08 {
+	// captureTypeRecords
+	ScanSharingExporter
+	0x02dd1305
+	0x02dd1305
+	// metadataSourceRecords
+}
+
+block 002ecd20 {
+	// captureTypeRecords
+	ScanSharingExporter
+	0x02991005
+	AdjustmentParamsProto
+	CGSize
+	// metadataSourceRecords
+}
+
+block 002ecd3c {
+	// captureTypeRecords
+	ScanSharingExporter
+	0x02991005
+	0x02991005
+	// metadataSourceRecords
+}
+
+block 002ecd54 {
+	// captureTypeRecords
+	Bool
+	ScanSharingExporter
+	0x02991005
+	// metadataSourceRecords
+}
+
+block 002ecd6c {
+	// captureTypeRecords
+	ScanSharingExporter
+	0x02dd1305
+	// metadataSourceRecords
+}
+
+block 002ecd80 {
+	// captureTypeRecords
+	@escaping @callee_guaranteed (@unowned Swift.Bool) -> ()
+	// metadataSourceRecords
+}
+
+block 002ecd90 {
+	// captureTypeRecords
+	ScanSharingExporter
+	CGImage
+	// metadataSourceRecords
+}
+
+block 002ecda4 {
+	// captureTypeRecords
+	ScanSharingExporter
+	CGImage
+	// metadataSourceRecords
+}
+
+block 002ecdb8 {
+	// captureTypeRecords
+	VideoCreator
+	MTLCommandQueue
+	@escaping @callee_guaranteed (@unowned Swift.Bool) -> ()
+	// metadataSourceRecords
+}
+
+block 002ecdd0 {
+	// captureTypeRecords
+	VideoCreator
+	Int
+	@escaping @callee_guaranteed (@unowned Swift.Bool) -> ()
+	// metadataSourceRecords
+}
+
+block 002ecde8 {
+	// captureTypeRecords
+	VideoCreator
+	Int
+	@escaping @callee_guaranteed (@unowned Swift.Bool) -> ()
+	// metadataSourceRecords
+}
+
+block 002ece00 {
+	// captureTypeRecords
+	VideoCreator
+	MTLCommandQueue
+	@escaping @callee_guaranteed (@unowned Swift.Bool) -> ()
+	// metadataSourceRecords
+}
+
+block 002ece18 {
+	// captureTypeRecords
+	VideoCreator
+	MTLCommandQueue
+	@escaping @callee_guaranteed (@unowned Swift.Bool) -> ()
+	// metadataSourceRecords
+}
+
+block 002ece30 {
+	// captureTypeRecords
+	AnimationController
+	Float
+	// metadataSourceRecords
+}
+
+block 002ece44 {
+	// captureTypeRecords
+	@callee_guaranteed () -> ()
+	// metadataSourceRecords
+}
+
+block 002ece54 {
+	// captureTypeRecords
+	@escaping @callee_guaranteed (@unowned Swift.Bool) -> ()
+	// metadataSourceRecords
+}
+
+block 002ece64 {
+	// captureTypeRecords
+	AnimationController
+	Double
+	// metadataSourceRecords
+}
+
+block 002ece78 {
+	// captureTypeRecords
+	@callee_guaranteed () -> ()
+	// metadataSourceRecords
+}
+
+block 002ece88 {
+	// captureTypeRecords
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ece98 {
+	// captureTypeRecords
+	IteratorProtocol
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002eceac {
+	// captureTypeRecords
+	Decodable
+	Decodable
+	0x02dd1305
+	// metadataSourceRecords
+}
+
+block 002ecec4 {
+	// captureTypeRecords
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002eced4 {
+	// captureTypeRecords
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ecee4 {
+	// captureTypeRecords
+	IteratorProtocol
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ecef8 {
+	// captureTypeRecords
+	IteratorProtocol
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ecf0c {
+	// captureTypeRecords
+	Decodable
+	Decodable
+	0x02dd1305
+	// metadataSourceRecords
+}
+
+block 002ecf24 {
+	// captureTypeRecords
+	RangeReplaceableCollection
+	// metadataSourceRecords
+}
+
+block 002ecf34 {
+	// captureTypeRecords
+	PostToScaniverseViewController
+	// metadataSourceRecords
+}
+
+block 002ecf44 {
+	// captureTypeRecords
+	UIView
+	CGAffineTransform
+	// metadataSourceRecords
+}
+
+block 002ecf58 {
+	// captureTypeRecords
+	VideoPlayerView
+	// metadataSourceRecords
+}
+
+block 002ecf68 {
+	// captureTypeRecords
+	AssimpExporter
+	ExportFormat
+	0x028d1e05
+	@escaping @callee_guaranteed (@unowned Swift.Bool) -> ()
+	// metadataSourceRecords
+}
+
+block 002ecf84 {
+	// captureTypeRecords
+	AssimpExporter
+	@escaping @callee_guaranteed (@unowned Swift.Bool) -> ()
+	Bool
+	// metadataSourceRecords
+}
+
+block 002ecf9c {
+	// captureTypeRecords
+	Array<String>
+	// metadataSourceRecords
+}
+
+block 002ecfac {
+	// captureTypeRecords
+	AuthTestViewController
+	{ var Swift.Array<Swift.String> }
+	// metadataSourceRecords
+}
+
+block 002ecfc0 {
+	// captureTypeRecords
+	TermsViewController
+	// metadataSourceRecords
+}
+
+block 002ecfd0 {
+	// captureTypeRecords
+	TermsViewController
+	// metadataSourceRecords
+}
+
+block 002ecfe0 {
+	// captureTypeRecords
+	ReverseGeocoder
+	PlaceProto
+	// metadataSourceRecords
+}
+
+block 002ecff4 {
+	// captureTypeRecords
+	@escaping @callee_unowned @convention(block) () -> ()
+	// metadataSourceRecords
+}
+
+block 002ed004 {
+	// captureTypeRecords
+	weak LoadingViewController?
+	// metadataSourceRecords
+}
+
+block 002ed014 {
+	// captureTypeRecords
+	SharedScanCell
+	// metadataSourceRecords
+}
+
+block 002ed024 {
+	// captureTypeRecords
+	ProfileViewController
+	// metadataSourceRecords
+}
+
+block 002ed034 {
+	// captureTypeRecords
+	ProfileViewController
+	// metadataSourceRecords
+}
+
+block 002ed044 {
+	// captureTypeRecords
+	AuthState
+	Decodable
+	// metadataSourceRecords
+}
+
+block 002ed058 {
+	// captureTypeRecords
+	Decodable
+	String
+	// metadataSourceRecords
+}
+
+block 002ed06c {
+	// captureTypeRecords
+	ProfileViewController
+	// metadataSourceRecords
+}
+
+block 002ed07c {
+	// captureTypeRecords
+	ProfileViewController
+	// metadataSourceRecords
+}
+
+block 002ed08c {
+	// captureTypeRecords
+	Decodable
+	String
+	// metadataSourceRecords
+}
+
+block 002ed0a0 {
+	// captureTypeRecords
+	weak ProfileViewController?
+	// metadataSourceRecords
+}
+
+block 002ed0b0 {
+	// captureTypeRecords
+	weak ProfileViewController?
+	// metadataSourceRecords
+}
+
+block 002ed0c0 {
+	// captureTypeRecords
+	weak ProfileViewController?
+	// metadataSourceRecords
+}
+
+block 002ed0d0 {
+	// captureTypeRecords
+	0x02210505
+	0x02350505
+	0x02490505
+	// metadataSourceRecords
+}
+
+block 002ed0e8 {
+	// captureTypeRecords
+	weak ProfileViewController?
+	// metadataSourceRecords
+}
+
+block 002ed0f8 {
+	// captureTypeRecords
+	UIView
+	CGAffineTransform
+	// metadataSourceRecords
+}
+
+block 002ed10c {
+	// captureTypeRecords
+	SceneKitExporter
+	ExportFormat
+	0x028d1e05
+	@escaping @callee_guaranteed (@unowned Swift.Bool) -> ()
+	// metadataSourceRecords
+}
+
+block 002ed128 {
+	// captureTypeRecords
+	SceneKitExporter
+	@escaping @callee_guaranteed (@unowned Swift.Bool) -> ()
+	Bool
+	// metadataSourceRecords
+}
+
+block 002ed140 {
+	// captureTypeRecords
+	weak LaunchQuickLookViewController?
+	// metadataSourceRecords
+}
+
+block 002ed150 {
+	// captureTypeRecords
+	{ var weak LaunchQuickLookViewController }?
+	0x028d1e05
+	// metadataSourceRecords
+}
+
+block 002ed164 {
+	// captureTypeRecords
+	InfoViewController
+	// metadataSourceRecords
+}
+
+block 002ed174 {
+	// captureTypeRecords
+	InfoViewController
+	// metadataSourceRecords
+}
+
+block 002ed184 {
+	// captureTypeRecords
+	ConfirmScanView
+	// metadataSourceRecords
+}
+
+block 002ed194 {
+	// captureTypeRecords
+	ProcessingStatusView
+	// metadataSourceRecords
+}
+
+block 002ed1a4 {
+	// captureTypeRecords
+	ProcessScanViewController
+	// metadataSourceRecords
+}
+
+block 002ed1b4 {
+	// captureTypeRecords
+	ProcessScanViewController
+	// metadataSourceRecords
+}
+
+block 002ed1c4 {
+	// captureTypeRecords
+	String
+	ProcessScanViewController
+	// metadataSourceRecords
+}
+
+block 002ed1d8 {
+	// captureTypeRecords
+	ProcessScanViewController
+	0x028d2105
+	// metadataSourceRecords
+}
+
+block 002ed1ec {
+	// captureTypeRecords
+	weak ProcessScanViewController?
+	// metadataSourceRecords
+}
+
+block 002ed1fc {
+	// captureTypeRecords
+	{ var weak ProcessScanViewController }?
+	0x02612005
+	// metadataSourceRecords
+}
+
+block 002ed210 {
+	// captureTypeRecords
+	ProcessScanViewController
+	// metadataSourceRecords
+}
+
+block 002ed220 {
+	// captureTypeRecords
+	ProcessScanViewController
+	// metadataSourceRecords
+}
+
+block 002ed230 {
+	// captureTypeRecords
+	ProcessScanViewController
+	// metadataSourceRecords
+}
+
+block 002ed240 {
+	// captureTypeRecords
+	UIView
+	CGAffineTransform
+	// metadataSourceRecords
+}
+
+block 002ed254 {
+	// captureTypeRecords
+	weak SharedScanThumbnailCell?
+	// metadataSourceRecords
+}
+
+block 002ed264 {
+	// captureTypeRecords
+	{ var weak SharedScanThumbnailCell }?
+	String
+	// metadataSourceRecords
+}
+
+block 002ed278 {
+	// captureTypeRecords
+	UIView
+	CGAffineTransform
+	// metadataSourceRecords
+}
+
+block 002ed28c {
+	// captureTypeRecords
+	0x023d0205
+	// metadataSourceRecords
+}
+
+block 002ed29c {
+	// captureTypeRecords
+	UploadListViewController
+	// metadataSourceRecords
+}
+
+block 002ed2ac {
+	// captureTypeRecords
+	NSFileManager
+	IteratorProtocol
+	@escaping @callee_guaranteed (@guaranteed Swift.Array<Swift.String>) -> ()
+	// metadataSourceRecords
+}
+
+block 002ed2c4 {
+	// captureTypeRecords
+	IteratorProtocol
+	Array<String>
+	@escaping @callee_guaranteed (@guaranteed Swift.Array<Swift.String>) -> ()
+	// metadataSourceRecords
+}
+
+block 002ed2dc {
+	// captureTypeRecords
+	UIView
+	CGAffineTransform
+	// metadataSourceRecords
+}
+
+block 002ed2f0 {
+	// captureTypeRecords
+	LocationRecorder
+	CLLocation
+	// metadataSourceRecords
+}
+
+block 002ed304 {
+	// captureTypeRecords
+	weak FeedViewController?
+	// metadataSourceRecords
+}
+
+block 002ed314 {
+	// captureTypeRecords
+	{ var weak FeedViewController }?
+	SharedScan
+	// metadataSourceRecords
+}
+
+block 002ed328 {
+	// captureTypeRecords
+	weak FeedViewController?
+	// metadataSourceRecords
+}
+
+block 002ed338 {
+	// captureTypeRecords
+	{ var weak FeedViewController }?
+	SharedScan
+	// metadataSourceRecords
+}
+
+block 002ed34c {
+	// captureTypeRecords
+	weak FeedViewController?
+	// metadataSourceRecords
+}
+
+block 002ed35c {
+	// captureTypeRecords
+	{ var weak FeedViewController }?
+	SharedScan
+	// metadataSourceRecords
+}
+
+block 002ed370 {
+	// captureTypeRecords
+	0x02a1fa04
+	// metadataSourceRecords
+}
+
+block 002ed380 {
+	// captureTypeRecords
+	weak FeedViewController?
+	// metadataSourceRecords
+}
+
+block 002ed390 {
+	// captureTypeRecords
+	FeedViewController
+	String
+	// metadataSourceRecords
+}
+
+block 002ed3a4 {
+	// captureTypeRecords
+	FeedViewController
+	String
+	// metadataSourceRecords
+}
+
+block 002ed3b8 {
+	// captureTypeRecords
+	FeedViewController
+	// metadataSourceRecords
+}
+
+block 002ed3c8 {
+	// captureTypeRecords
+	weak FeedViewController?
+	// metadataSourceRecords
+}
+
+block 002ed3d8 {
+	// captureTypeRecords
+	0x028dff04
+	// metadataSourceRecords
+}
+
+block 002ed3e8 {
+	// captureTypeRecords
+	UIView
+	CGAffineTransform
+	// metadataSourceRecords
+}
+
+block 002ed3fc {
+	// captureTypeRecords
+	RangeSelector
+	// metadataSourceRecords
+}
+
+block 002ed40c {
+	// captureTypeRecords
+	ObjExporter
+	0x028d1e05
+	@escaping @callee_guaranteed (@unowned Swift.Bool) -> ()
+	// metadataSourceRecords
+}
+
+block 002ed424 {
+	// captureTypeRecords
+	PointUniquifier
+	ObjExporter
+	0x028d1e05
+	@escaping @callee_guaranteed (@unowned Swift.Bool) -> ()
+	// metadataSourceRecords
+}
+
+block 002ed440 {
+	// captureTypeRecords
+	0x02ad2205
+	ObjExporter
+	0x028d1e05
+	@escaping @callee_guaranteed (@unowned Swift.Bool) -> ()
+	// metadataSourceRecords
+}
+
+block 002ed45c {
+	// captureTypeRecords
+	0x02ad2205
+	PointUniquifier
+	ObjExporter
+	0x028d1e05
+	@escaping @callee_guaranteed (@unowned Swift.Bool) -> ()
+	// metadataSourceRecords
+}
+
+block 002ed47c {
+	// captureTypeRecords
+	ObjExporter
+	0x028d1e05
+	@escaping @callee_guaranteed (@unowned Swift.Bool) -> ()
+	// metadataSourceRecords
+}
+
+block 002ed494 {
+	// captureTypeRecords
+	ObjExporter
+	0x02991005
+	0x028d1e05
+	@escaping @callee_guaranteed (@unowned Swift.Bool) -> ()
+	// metadataSourceRecords
+}
+
+block 002ed4b0 {
+	// captureTypeRecords
+	ObjExporter
+	0x02991005
+	0x028d1e05
+	@escaping @callee_guaranteed (@unowned Swift.Bool) -> ()
+	// metadataSourceRecords
+}
+
+block 002ed4cc {
+	// captureTypeRecords
+	ObjExporter
+	0x02991005
+	0x028d1e05
+	@escaping @callee_guaranteed (@unowned Swift.Bool) -> ()
+	// metadataSourceRecords
+}
+
+block 002ed4e8 {
+	// captureTypeRecords
+	ObjExporter
+	0x02991005
+	0x028d1e05
+	@escaping @callee_guaranteed (@unowned Swift.Bool) -> ()
+	// metadataSourceRecords
+}
+
+block 002ed504 {
+	// captureTypeRecords
+	0x028d1e05
+	0x02991005
+	0x02991005
+	0x02991005
+	@escaping @callee_guaranteed (@unowned Swift.Bool) -> ()
+	// metadataSourceRecords
+}
+
+block 002ed524 {
+	// captureTypeRecords
+	@escaping @callee_guaranteed (@unowned Swift.Bool) -> ()
+	Bool
+	// metadataSourceRecords
+}
+
+block 002ed538 {
+	// captureTypeRecords
+	0x02090305
+	0x026df704
+	Int
+	// metadataSourceRecords
+}
+
+block 002ed550 {
+	// captureTypeRecords
+	Int
+	Swift.Array<SiftFeature>
+	// metadataSourceRecords
+}
+
+block 002ed564 {
+	// captureTypeRecords
+	Int
+	Int
+	// metadataSourceRecords
+}
+
+block 002ed578 {
+	// captureTypeRecords
+	Int
+	Int
+	UIImage
+	// metadataSourceRecords
+}
+
+block 002ed590 {
+	// captureTypeRecords
+	CropOverlayView
+	// metadataSourceRecords
+}
+
+block 002ed5a0 {
+	// captureTypeRecords
+	CropOverlayView
+	// metadataSourceRecords
+}
+
+block 002ed5b0 {
+	// captureTypeRecords
+	FeedManager
+	Int
+	State
+	// metadataSourceRecords
+}
+
+block 002ed5c8 {
+	// captureTypeRecords
+	FeedManager
+	Int
+	// metadataSourceRecords
+}
+
+block 002ed5dc {
+	// captureTypeRecords
+	UIView
+	CGAffineTransform
+	// metadataSourceRecords
+}
+
+block 002ed5f0 {
+	// captureTypeRecords
+	UIImageView
+	// metadataSourceRecords
+}
+
+block 002ed600 {
+	// captureTypeRecords
+	UIImageView
+	// metadataSourceRecords
+}
+
+block 002ed610 {
+	// captureTypeRecords
+	UIView
+	CGAffineTransform
+	// metadataSourceRecords
+}
+
+block 002ed624 {
+	// captureTypeRecords
+	RangeSelector
+	// metadataSourceRecords
+}
+
+block 002ed634 {
+	// captureTypeRecords
+	weak UserInfoCell?
+	// metadataSourceRecords
+}
+
+block 002ed644 {
+	// captureTypeRecords
+	weak UserInfoCell?
+	// metadataSourceRecords
+}
+
+block 002ed654 {
+	// captureTypeRecords
+	weak UserInfoCell?
+	// metadataSourceRecords
+}
+
+block 002ed664 {
+	// captureTypeRecords
+	weak ScanListCollectionView?
+	// metadataSourceRecords
+}
+
+block 002ed674 {
+	// captureTypeRecords
+	{ var weak ScanListCollectionView }?
+	Swift.Dictionary<Swift.Int, CGRect>
+	0x02fd2405
+	// metadataSourceRecords
+}
+
+block 002ed68c {
+	// captureTypeRecords
+	UICollectionViewCell
+	CGPoint
+	// metadataSourceRecords
+}
+
+block 002ed6a0 {
+	// captureTypeRecords
+	UIView
+	CGAffineTransform
+	// metadataSourceRecords
+}
+
