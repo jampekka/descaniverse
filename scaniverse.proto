@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+message AffineTransform {
+	repeated float rotation = 1;
+	repeated float translation = 2;
+}
+
+message Location {
+	double timestamp = 1;
+	double latitude = 2;
+	double longitude = 3;
+	float accuracy = 4;
+	float elevationMeters = 5;
+	float elevationAccuracy = 6;
+	float headingDegrees = 7;
+	float headingAccuracy = 8;
+}
+
+
+
+message Frame {
+	optional int64 id = 1;
+	optional int64 anchor = 2;
+	double timestamp = 3;
+	CameraParams camera = 4;
+	AffineTransform transform = 5;
+	ExposureInfo exposure = 6;
+	DepthRange depth_range = 7;
+	float quality = 8;
+	bool isLargeImage = 9;
+}
+
+message CameraParams {
+	int64 width = 1;
+	int64 height = 2;
+	float f = 3;
+	float px = 4;
+	float py = 5;
+}
+
+message ExposureInfo {
+	float shutter = 1;
+	float offset = 2;
+}
+
+message DepthRange {
+	float near = 1;
+	float far = 2;
+}
+
+//message DepthRan
+
+message Frames {
+	repeated Location locations = 2;
+	repeated Frame frames = 5;
+	repeated AffineTransform anchors = 13;
+}
