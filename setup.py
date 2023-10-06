@@ -8,7 +8,7 @@ setup(name='descaniverse',
       author_email='jami.pekkanen@gmail.com',
       license='AGPLv3',
       packages=['descaniverse'],
-      scripts=['bin/scaniverse_to_json.py'],
+      scripts=['bin/descaniverse'],
       # TODO: We could get by with lighter dependencies
       install_requires=[
         'numpy',

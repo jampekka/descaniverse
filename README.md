@@ -24,21 +24,19 @@ pip install git+https://github.com/jampekka/descaniverse
 
 ## Usage
 
-```console
-usage: scaniverse_to_json.py [-h] [-o OUTPUT] scaniverse_dir
+A CLI interface is included as `descaniverse.py` runnable.
 
-Converts Scaniverse metadata as-is to JSON
+```console
+usage: descaniverse [-h] {to_json,to_nerfstudio} ...
 
 positional arguments:
-  scaniverse_dir
+  {to_json,to_nerfstudio}
+    to_json             Converts Scaniverse metadata as-is to JSON
+    to_nerfstudio       Converts a Scaniverse scan to nerfstudio format
 
 optional arguments:
   -h, --help            show this help message and exit
-  -o OUTPUT, --output OUTPUT
-                        (default: STDOUT)
 ```
-
-TODO: `scaniverse_to_nerfstudio.py`
 
 ##
 

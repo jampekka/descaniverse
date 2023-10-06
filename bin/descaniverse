@@ -1,0 +1,10 @@
+#!/usr/bin/env python3
+
+import defopt
+from descaniverse import *
+
+defopt.run(dict(
+        to_json=scaniverse_to_json,
+        to_nerfstudio=scaniverse_to_nerfstudio,
+        ),
+        cli_options='has_default')
