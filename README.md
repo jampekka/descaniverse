@@ -7,6 +7,8 @@ The data format is [reverse engineered](./reverse_engineering/)¹ and thus all d
 
 ## Getting Scaniverse raw data
 
+[Scaniverse optionally records "raw data"](https://blog.scaniverse.com/save-raw-data-for-future-processing-e427b23600b6). This has to be enabled for this to work. Non-raw data can be mostly exported directly from the app.
+
 Scaniverse doesn't support exporting raw data and it can't be read from the device using the usual
 tools (e.g. [ifuse](https://github.com/libimobiledevice/ifuse)) to read files from iPhone/iPad¹.
 However, the data can be accessed by creating a backup of the device¹ (using [idevicebackup2](https://libimobiledevice.org/))
@@ -24,7 +26,7 @@ pip install git+https://github.com/jampekka/descaniverse
 
 ## Usage
 
-A CLI interface is included as `descaniverse.py` runnable.
+A CLI interface is included as `descaniverse` runnable.
 
 ```console
 usage: descaniverse [-h] {to_json,to_nerfstudio} ...
