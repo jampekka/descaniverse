@@ -16,6 +16,7 @@ setup(name='descaniverse',
         'pylzfse',
         'protobuf',
         'defopt',
+        'Pillow',
       ],
       zip_safe=False)
 

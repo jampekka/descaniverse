@@ -8,6 +8,7 @@ import os.path
 import shutil
 import numpy as np
 from scipy.spatial.transform import Rotation
+import lzfse
 
 def message_to_dict(msg):
     return MessageToDict(msg, including_default_value_fields=True)
@@ -53,7 +54,7 @@ def scaniverse_to_json(scaniverse_dir: Path, output: Path=FakePath(sys.stdout, "
     output.write('\n')
 
 def scaniverse_to_nerfstudio(scaniverse_dir: Path, output_dir: Path,
-                             depth: bool=True, copy_images: bool=True):
+                             depth_images: bool=True, copy_images: bool=True):
     """Converts a Scaniverse scan to nerfstudio format"""
     # TODO: Currently reads only large frames
     scan = ScaniverseRawData(scaniverse_dir)
@@ -68,7 +69,7 @@ def scaniverse_to_nerfstudio(scaniverse_dir: Path, output_dir: Path,
     input_depth_dir = scaniverse_dir/"depth"
 
     if copy_images: output_image_dir.mkdir(exist_ok=True)
-    if depth: output_depth_dir.mkdir(exist_ok=True)
+    if depth_images: output_depth_dir.mkdir(exist_ok=True)
     
     conf = scan.scan.configuration
     w_large, h_large = conf.largeImageSize.width, conf.largeImageSize.height
@@ -127,6 +128,25 @@ def scaniverse_to_nerfstudio(scaniverse_dir: Path, output_dir: Path,
             # TODO: Uses absolute
             data['file_path'] = os.path.relpath(input_image_path, output_dir)
         
+        if depth_images:
+            from PIL import Image
+            input_depth_path = input_depth_dir/f"{file_base}.dmp"
+            depth_buf = lzfse.decompress(open(input_depth_path, 'br').read())
+            depth_data = np.frombuffer(depth_buf, dtype=np.float16)
+            try:
+                depth_data = depth_data.reshape(h_depth, w_depth)
+            except ValueError as e:
+                print(f"Skipping frame {frame.id}; invalid depth data: " + str(e), file=sys.stderr)
+                continue
+            # Convert depth from meters to millimeters:
+            # https://docs.nerf.studio/quickstart/data_conventions.html#depth-images
+            # Depth zero means missing in both Scaniverse and in nerfstudio
+            depth_uint16 = (depth_data*1000).astype(np.uint16)
+
+            dst = output_depth_dir/f"{file_base}.png"
+            Image.fromarray(depth_uint16).save(dst)
+            data["depth_file_path"] = str(dst.relative_to(output_dir))
+
         data['scaniverse_frame'] = MessageToDict(frame)
         frames.append(data)
     
