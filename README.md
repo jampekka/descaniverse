@@ -24,9 +24,21 @@ pip install git+https://github.com/jampekka/descaniverse
 
 ## Usage
 
-Scaniverse scan metadata can be dumped to a json file with the `scaniverse_to_json.py` executable.
+```console
+usage: scaniverse_to_json.py [-h] [-o OUTPUT] scaniverse_dir
 
-TODO: Convert to nerfstudio
+Converts Scaniverse metadata as-is to JSON
+
+positional arguments:
+  scaniverse_dir
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -o OUTPUT, --output OUTPUT
+                        (default: STDOUT)
+```
+
+TODO: `scaniverse_to_nerfstudio.py`
 
 ##
 

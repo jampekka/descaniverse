@@ -2,27 +2,32 @@
 
 import descaniverse
 from pathlib import Path
-from typing_extensions import Annotated
-import typer
+import defopt
 import sys
 import json
+from typing import Union, TextIO, Optional
 
-ExistingDir = Annotated[Path, typer.Argument(
-    exists=True,
-    file_okay=False,
-    dir_okay=True,
-    readable=True)
-]
+class FakePath:
+    def __init__(self, file, name):
+        self.file = file
+        self.name = name
 
-# TODO: Does typer allow for the scaniverse-argument to be set alternatively
-#   as --scaniverse=<dir> (i.e. as option)? This would match the calling convention
-#   of Python. And if it would be default, we could use kw-only and positional-only syntax
-#   of Python function definitions instead of having Argument and Option as separate things.
-def scaniverse_to_json(scaniverse: ExistingDir, output: Annotated[typer.FileTextWrite, typer.Argument()] = sys.stdout):
-    """Converts scaniverse metadata as-is to JSON"""
-    scan = descaniverse.ScaniverseRawData(scaniverse)
+    def __str__(self):
+        return self.name
+
+    def open(self, *args, **kwargs):
+        return self.file
+
+def scaniverse_to_json(scaniverse_dir: Path, output: Path = FakePath(sys.stdout, "STDOUT")):
+    """Converts Scaniverse metadata as-is to JSON"""
+    scan = descaniverse.ScaniverseRawData(scaniverse_dir)
+    if output is None:
+        output = sys.stdout
+    else:
+        output = output.open('w')
     json.dump(scan.as_dicts(), output, indent=2)
+    output.write('\n')
 
 if __name__ == '__main__':
-    import typer
-    typer.run(scaniverse_to_json)
+    import defopt
+    defopt.run(scaniverse_to_json, cli_options='has_default')
