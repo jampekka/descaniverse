@@ -13,7 +13,7 @@ setup(name='descaniverse',
       install_requires=[
         'numpy',
         'scipy',
-        'pylzfse',
+        'pyliblzfse',
         'protobuf',
         'defopt',
         'Pillow',
