@@ -11,9 +11,9 @@ message Scan {
 	double createdAt = 2;
 	double modifiedAt = 3;
 	string name = 4;
-	int64 numFrames = 6;
-	int64 totalSizeBytes = 7;
-	int64 numAnchors = 12;
+	int32 numFrames = 6;
+	int32 totalSizeBytes = 7;
+	int32 numAnchors = 12;
 	string captureDevice = 16;
 	
 	ScanConfiguration configuration = 17;
@@ -21,7 +21,7 @@ message Scan {
 	Place place = 19; 
 	
 	repeated float captureOrigin = 23;
-	int64 rawDataSizeBytes = 26;
+	int32 rawDataSizeBytes = 26;
 	
 }
 
@@ -42,20 +42,20 @@ message ScanConfiguration {
 	RasterSize depthSize = 3;
 	float unknown4 = 4;
 	float unknown5 = 5;
-	int64 unknown7 = 7;
+	int32 unknown7 = 7;
 	float unknown8 = 8;
-	int64 unknown11 = 11;	
+	int32 unknown11 = 11;	
 }
 
 message RasterSize {
-	int64 width = 1;
-	int64 height = 2;
+	int32 width = 1;
+	int32 height = 2;
 }
 
 
 message Frame {
-	optional int64 id = 1;
-	optional int64 anchor = 2;
+	optional int32 id = 1;
+	optional int32 anchor = 2;
 	double timestamp = 3;
 	CameraParams camera = 4;
 	AffineTransform transform = 5;
@@ -82,8 +82,8 @@ message Location {
 }
 
 message CameraParams {
-	int64 width = 1;
-	int64 height = 2;
+	int32 width = 1;
+	int32 height = 2;
 	float f = 3;
 	float px = 4;
 	float py = 5;
