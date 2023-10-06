@@ -6,6 +6,8 @@ import json
 from typing import Union, TextIO, Optional
 import os.path
 import shutil
+import numpy as np
+from scipy.spatial.transform import Rotation
 
 def message_to_dict(msg):
     return MessageToDict(msg, including_default_value_fields=True)
@@ -93,11 +95,27 @@ def scaniverse_to_nerfstudio(scaniverse_dir: Path, output_dir: Path,
         
         camera = frame.camera
         focal_length = camera.f*small_to_large
+
+        quat = np.array(frame.transform.rotation)
+        rotation = Rotation.from_quat(quat).as_matrix()
+        translation = np.array(frame.transform.translation).reshape(3, 1)
+        
+        # Scaniverse is in same coordinate system as COLMAP, so copypasting
+        # the conversion from here: https://github.com/nerfstudio-project/nerfstudio/blob/a484d255b4f71c55915afcfc52d90ec88963779f/nerfstudio/process_data/colmap_utils.py#L426C7-L428
+        # Note that unlike COLMAP, Scaniverse is already in the camera-to-world
+        # system, so it doesn't have to be inverted.
+        c2w = np.concatenate([rotation, translation], 1)
+        c2w = np.concatenate([c2w, np.array([[0, 0, 0, 1]])], 0)
+        c2w[0:3, 1:3] *= -1
+        c2w = c2w[np.array([1, 0, 2, 3]), :]
+        c2w[2, :] *= -1
+
         data = dict(
-            px=camera.px*small_to_large,
-            py=camera.py*small_to_large,
+            cx=camera.px*small_to_large,
+            cy=camera.py*small_to_large,
             fl_x=focal_length,
             fl_y=focal_length,
+            transform_matrix=c2w.tolist(),
         )
 
         input_image_path = input_image_dir/f"{file_base}.jpg"
