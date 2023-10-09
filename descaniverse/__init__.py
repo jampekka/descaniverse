@@ -26,9 +26,9 @@ open(directory / "frames.pb", 'rb').read()
 
     def as_dict(self):
         return {
-            'directory': self.directory,
-            'scan': json_format.MessageToDict(self.scan),
-            'frames': json_format.MessageToDict(self.frames)
+            'directory': str(self.directory),
+            'scan': MessageToDict(self.scan),
+            'frames': MessageToDict(self.frames)
                 }
 
 class FakePath:
@@ -54,7 +54,8 @@ def scaniverse_to_json(scaniverse_dir: Path, output: Path=FakePath(sys.stdout, "
     output.write('\n')
 
 def scaniverse_to_nerfstudio(scaniverse_dir: Path, output_dir: Path,
-                             depth_images: bool=True, copy_images: bool=True):
+                             depth_images: bool=True, copy_images: bool=True,
+                             max_frames: Optional[int]=None):
     """Converts a Scaniverse scan to nerfstudio format"""
     # TODO: Currently reads only large frames
     scan = ScaniverseRawData(scaniverse_dir)
@@ -150,6 +151,9 @@ def scaniverse_to_nerfstudio(scaniverse_dir: Path, output_dir: Path,
 
         data['scaniverse_frame'] = MessageToDict(frame)
         frames.append(data)
+        # TODO: Do uniformish sampling instead
+        if max_frames and len(frames) >= max_frames:
+            break
     
     json.dump(transforms, open(output_file, 'w'), indent=2)
     #small_to_big_w = scan.
