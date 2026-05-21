@@ -18,5 +18,9 @@ setup(name='descaniverse',
         'defopt',
         'Pillow',
       ],
+      # Optional: only needed for `to_pointcloud` LAS output.
+      extras_require={
+        'las': ['laspy', 'pyproj'],
+      },
       zip_safe=False)
 

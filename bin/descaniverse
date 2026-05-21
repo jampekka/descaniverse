@@ -6,5 +6,6 @@ from descaniverse import *
 defopt.run(dict(
         to_json=scaniverse_to_json,
         to_nerfstudio=scaniverse_to_nerfstudio,
+        to_pointcloud=scaniverse_to_pointcloud,
         ),
         cli_options='has_default')
