@@ -8,7 +8,26 @@ import os.path
 import shutil
 import numpy as np
 from scipy.spatial.transform import Rotation
+import zlib
 import liblzfse as lzfse
+
+
+def decode_depth_dmp(depth_buf):
+    """Decompress a Scaniverse ``.dmp`` depth file to raw float16 bytes.
+
+    Two on-disk formats are supported:
+
+    * Legacy: a bare LZFSE stream.
+    * Newer: a 12-byte header -- ``b'DMP0'`` magic, uint32 little-endian
+      file size, uint16 width, uint16 height -- followed by a
+      zlib-compressed float16 payload.
+
+    The format is detected from the leading magic bytes.
+    """
+    if depth_buf[:4] == b'DMP0':
+        return zlib.decompress(depth_buf[12:])
+    return lzfse.decompress(depth_buf)
+
 
 def message_to_dict(msg):
     return MessageToDict(msg, including_default_value_fields=True)
@@ -133,7 +152,7 @@ def scaniverse_to_nerfstudio(scaniverse_dir: Path, output_dir: Path,
             from PIL import Image
             input_depth_path = input_depth_dir/f"{file_base}.dmp"
             depth_buf = open(input_depth_path, 'br').read()
-            depth_buf = lzfse.decompress(depth_buf)
+            depth_buf = decode_depth_dmp(depth_buf)
             depth_data = np.frombuffer(depth_buf, dtype=np.float16)
             try:
                 depth_data = depth_data.reshape(h_depth, w_depth)
